@@ -73,13 +73,11 @@ main section li{
 
 #carrousel {
     padding-top: 0;
-    width: 1000px;  
 }
 
 #carrousel img{
     width: 100%;
     
-    height: 416px;
 }
 
 #carrousel ul li a{
