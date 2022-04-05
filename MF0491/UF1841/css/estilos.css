@@ -1,0 +1,409 @@
+/* Css variables */
+:root{
+    --color-vinculo: darkcyan;
+    --padding: 0.5rem;
+    --color-tinta:black;
+    --color-fondo:white;
+    --color-tinta-titulo:white;
+    --color-fondo-titulo:black;
+    --color-fondo-secundario:darkgrey;
+    
+    --blockquote-size:1.25rem;
+}
+/* ------------- */
+
+/* *->hace en css en todas las etiquetas, box-sizing:border-box -> todas las cajas usan el tamaño de la caja como tamaño completo */
+*{
+    box-sizing: border-box;
+}
+
+/* Global */
+
+body{
+    background-color: var(--color-fondo);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color:var(--color-vinculo);
+}
+a:hover{
+    text-decoration: underline;
+}
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.5em;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+main, pre, h1, h2, h3, p, blockquote, ul, ol, dl, form{
+    padding: var(--padding);
+}
+
+p{
+    line-height: 1.5rem;
+}
+
+blockquote{
+    background-color: var(--color-fondo-secundario);
+    border-radius: var(--padding);
+    font-style: italic;
+    font-size: var(--blockquote-size);
+    line-height: calc(var(--blockquote-size)+var(--padding));
+}
+
+blockquote::before,blockquote::after{
+    content:"''"
+}
+
+video, audio, .proporcion, figure{
+    width: 100%;
+    border-radius: var(--padding);
+    border: 1px solid var(--color-fondo-secundario);
+    margin-bottom: calc(var(--padding)*2);
+}
+
+
+
+/* Cabecera */
+
+header, footer{
+    background-color: var(--color-fondo-titulo);
+    color: var(--color-tinta-titulo);
+    padding: var(--padding);
+    text-align: center;
+}
+
+/* Menu */
+
+body > nav{
+    background-color: var(--color-fondo-secundario);
+    text-align: center;
+}
+
+body>nav a{
+    display: inline-block;
+    color: var(--color-tinta-titulo);
+    padding: var(--padding);
+}
+body>nav a:hover{
+    background-color: var(--color-fondo-titulo);
+    text-decoration: none;
+    width: 100%;
+}
+/* Main */
+
+
+pre{
+    font-family: monospace;
+    background-color: var(--color-fondo-secundario);
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: var(--padding);
+}
+
+main ul li{
+    list-style: disc;
+    list-style-position: inside;
+}
+
+main ol li{
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+main dt{
+    font-weight: bold;
+}
+main dd{
+    padding: var(--padding);
+}
+main dd::before{
+    content: "- ";
+}
+
+
+/* Multimedia */
+
+#multimedia figcaption{
+    color: var(--color-fondo-secundario);
+
+}
+/* Estilos iframes */
+.proporcion{
+    position: relative;
+    /* Si algo se sale del ancho no se ve */
+    overflow: hidden; 
+    width: 100%;
+}
+/* .proporcion.r16x9 las dos clases juntas significa que hace solo a los elementos que tengas esas dos clases */
+.proporcion.r16x9{
+    padding-top: 56.25%;
+}
+.proporcion.r4x3{
+    padding-top: 75%;
+}
+
+.proporcion.r1x1{
+    padding-top: 100%;
+}
+
+.proporcion > iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Tablas */
+th{
+    font-weight: bold;
+}
+
+caption{
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+thead, tfoot{
+    background-color: var(--color-fondo-titulo);
+    color: var(--color-tinta-titulo);
+}
+
+tbody tr:nth-of-type(even){
+    background-color: var(--color-fondo-secundario);
+}
+
+tbody tr{
+    text-align: center;
+}
+td, th{
+    padding: var(--padding);
+    border: 1px solid #868686;
+}
+
+table{
+    width: 100%;
+    border: 1px solid #868686;
+}
+
+
+/* Formularios */
+
+legend{
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-bottom: var(--padding);
+}
+
+label{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: var(--padding);
+    vertical-align: baseline;
+}
+
+input[type=radio]{
+    width: auto;
+}
+input[type=radio]+label{
+    width: auto;
+}
+input, select, textarea, button{
+    width: 100%;
+    margin-bottom: var(--padding);
+    padding: var(--padding);
+    border-radius: var(--padding);
+}
+
+
+button, input[type=submit],  input[type=reset]{
+    background-color: var(--color-vinculo);
+}
+
+/* Aside */
+aside{
+    background-color: var(--color-fondo-secundario);
+    text-align: center;
+}
+aside li{
+    padding: var(--padding);
+}
+
+
+
+@media (min-width: 768px){
+    body{
+        background-color: rgb(250, 44, 44);
+    }
+
+    body>nav li{
+        display: inline-block;
+    }
+
+    #listas ul, #listas ol, #listas dl{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    #multimedia >*:not(h3){
+        width: 50%;
+        float:left;
+    }
+
+    .proporcion.r16x9{
+        padding-top: calc(56.25%/2);
+    }
+    .proporcion.r4x3{
+        padding-top:calc(75%/2);
+    }
+    
+    .proporcion.r1x1{
+        padding-top: calc(100%/2);
+    }
+
+    #formularios div{
+        display: flex;
+    }
+
+    label{
+        flex-basis: 15rem;
+    }
+
+    input{
+        flex-grow: 1;
+    }
+
+    aside ul{
+        display: flex;
+    }
+
+    @media (min-width:1024px){
+        
+        body{
+            background-color: aqua;
+        }
+
+        form{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        fieldset{
+            flex-basis:50%;
+            padding: var(--padding);
+        }
+
+        fieldset:nth-of-type(1){
+            order: 1;
+        }
+        fieldset:nth-of-type(2){
+            order: 3;
+        }
+        fieldset:nth-of-type(3){
+            order: 2;
+        }
+        fieldset:nth-of-type(4){
+            order: 4;
+        }
+    }
+    @media (min-width: 1440px) {
+        body{
+            background-color: #868686;
+        }
+
+        #parrafos{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #parrafos>*:not(h3){
+
+            width: 50%;
+        }
+
+        #parrafos h3{
+            flex-basis: 100%;
+        }
+
+        #parrafos hr{
+            display: none;
+        }
+
+        @media (min-width:2560px){
+            body>header{
+                grid-area: cabecera;
+            }
+
+            body>nav{
+                grid-area: menu;
+            }
+
+            body>main{
+                grid-area: principal;
+            }
+
+            body>aside{
+                grid-area:anuncios;
+            }
+
+            body>footer{
+                grid-area: footer;
+            }
+
+            body{
+                display: grid;
+                grid-template-columns: 1fr 10rem;
+                grid-template-areas: 
+                 "cabecera cabecera"
+                 "menu menu"
+                 "principal anuncios"
+                 "pie pie";
+
+            }
+
+            #parrafos{
+                grid-area: parrafos;
+            }
+
+            #listas{
+                grid-area: listas;
+            }
+
+            #multimedia{
+                grid-area: multimedia;
+            }
+
+            #tablas{
+                grid-area: tablas;
+            }
+
+            #formularios{
+                grid-area: formularios;
+            }
+
+            #html{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "parrafos tablas"
+                    "listas tablas"
+                    "multimedia formularios";
+            }
+
+        }
+
+
+        
+    }
+
+}
