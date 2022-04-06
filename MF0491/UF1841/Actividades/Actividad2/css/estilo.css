@@ -1,0 +1,66 @@
+:root{
+    --padding:1rem;
+    --color-fondo:#61CE70;
+    --color-secundario: #cccaca
+}
+
+body{
+    margin:0;
+}
+/* cabecera  */
+header{
+    text-align: center;
+    background-color: var(--color-secundario);
+}
+header img{
+    width: 30%;
+}
+
+/* Main */
+
+main{
+    margin-bottom: var(--padding);
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--color-fondo);
+}
+
+section article{
+    
+    margin-top: var(--padding);
+    width: 25rem;
+    background-color: azure;
+}
+
+section article{
+    text-align: center;
+    margin-bottom: var(--padding);
+}
+section article img{
+    width: 100%;
+}
+
+section article p{
+    padding: var(--padding);
+}
+
+section article h3{
+    background-color: red;
+    color:white;
+    padding:calc(var(--padding)/2);
+    margin-top:-0.5rem;
+}
+
+
+
+/* Footer */
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: var(--padding);
+    background-color: var(--color-secundario);
+}
