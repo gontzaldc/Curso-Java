@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Pedido Pizza</title>
+</head>
+<body>
+    <header>
+        <h1>Pedido Pizza</h1>
+    </header>
+    <main>
+        <form action="POST">
+            <fieldset>
+                <legend>La Pizza</legend>
+                Ingredientes
+                <div>
+                    <div>
+
+                        <input type="checkbox" id="queso" value="queso">
+                        <label for="queso">Queso</label>
+                    </div>
+                    <div>
+
+                        <input type="checkbox" id="pimiento" value="pimiento">
+                        <label for="pimiento">Pimiento</label>
+                    </div>
+                    <div>
+
+                        <input type="checkbox" id="cebolla" value="cebolla">
+                        <label for="cebolla">Cebolla</label>
+                    </div>
+                </div>
+                Tamaño
+                <div>
+                    <div>
+
+                        <input type="radio" id="pequeña" value="pequeña" name="tamaño">
+                        <label for="pequeña">Pequeña</label>
+                    </div>
+                    <div>
+
+                        <input type="radio" id="mediana" value="mediana" name="tamaño">
+                        <label for="mediana">Mediana</label>
+                    </div>
+                    <div>
+
+                        <input type="radio" id="grande" value="grande" name="tamaño">
+                        <label for="grande">Grande</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Datos de entrega</legend>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre">
+                </div>
+                <div>
+                    <label for="direccion">Direccion</label>
+                    <input type="text" id="direccion">
+                </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefonos">
+                </div>
+                <label for="instrucciones">Instrucciones especiales</label><br>
+                <textarea id="instrucciones" cols="40" rows="15"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Método de pago</legend>
+                <div>
+                    <select id="pago">
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta</option>
+                    </select>
+                </div>
+            </fieldset>
+    </form>
+    </main>
+</body>
+</html>
