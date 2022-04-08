@@ -1,66 +1,163 @@
-:root{
-    --padding:1rem;
-    --color-fondo:#61CE70;
-    --color-secundario: #cccaca
+:root {
+    --padding: 0.5rem;
+    --color-fondo: #61CE70;
+    --color-secundario: #cccaca;
+    --color-texto-principal: #23A45A;
 }
 
-body{
-    margin:0;
+body {
+    margin: 0;
 }
+
 /* cabecera  */
-header{
-    text-align: center;
-    background-color: var(--color-secundario);
+nav {
+
+    display: inline-block;
 }
-header img{
-    width: 30%;
+
+header {
+    background-color: var(--color-secundario);
+
+}
+
+header img {
+    width: 10%;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+ul {
+    list-style: none;
+}
+
+nav li>a {
+    color: #000;
+    padding: var(--padding);
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+}
+
+nav li>a:hover {
+    color:var(--color-texto-principal);
+}
+
+nav>ul>li {
+    float: left;
+    text-align: center
+}
+
+nav>ul>li>ul {
+    display: none;
+    position: absolute;
+    background-color: var(--color-secundario);
+
+}
+nav>ul>li>ul>li{
+    text-align: center;
+}
+
+nav>ul>li:hover>ul {
+    display: block;
+    
 }
 
 /* Main */
 
-main{
+main {
     margin-bottom: var(--padding);
 }
-section{
+
+section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: var(--color-fondo);
 }
 
-section article{
-    
+section article {
+
     margin-top: var(--padding);
     width: 25rem;
     background-color: azure;
 }
 
-section article{
+section article {
     text-align: center;
     margin-bottom: var(--padding);
 }
-section article img{
+
+section article img {
     width: 100%;
 }
 
-section article p{
+section article p {
     padding: var(--padding);
 }
 
-section article h3{
+section article h3 {
     background-color: red;
-    color:white;
-    padding:calc(var(--padding)/2);
-    margin-top:-0.5rem;
+    color: white;
+    padding: calc(var(--padding)/2);
+    margin-top: -0.5rem;
 }
 
 
 
 /* Footer */
-footer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+footer {
     padding: var(--padding);
     background-color: var(--color-secundario);
+    border-top: 1rem solid var(--color-texto-principal);
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: 
+     "fimg fboletin finfo"
+     "fpoliticas fpoliticas fpoliticas";
+     align-items: center;
+     justify-content: center;
+     justify-items: center;
+}
+
+
+
+#fimg{
+    grid-area: fimg;
+}
+
+#fboletin{
+    grid-area: fboletin;
+}
+
+#finfo{
+    grid-area: finfo;
+}
+
+#fpoliticas{
+    grid-area: fpoliticas;
+}
+
+#fimg img{
+    width: 100%;
+}
+
+#fboletin button{
+    background-color: #23A455;
+    border:none;
+    padding: var(--padding);
+    width: 100%;
+    border-radius: var(--padding);
+    margin: var(--padding);
+}
+
+#fboletin input{
+    width: 100%;
+    margin: var(--padding);
+    padding: var(--padding);
+    border-radius: var(--padding);
 }
