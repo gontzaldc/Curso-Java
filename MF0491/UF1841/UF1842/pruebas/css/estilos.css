@@ -1,0 +1,26 @@
+.cuadro{
+    width: 33%;
+    height: 200px;
+    box-shadow: 0 0 0 1px #333333;
+    border: 1px solid #333333;
+    cursor: pointer;
+    font-size: 10rem;
+    text-align: center;
+    
+}
+
+
+#juego {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: url("../img/x.png"), auto;
+}
+
+body{
+    text-align: center;
+}
+
+img{
+    width: 40%;
+}
+
