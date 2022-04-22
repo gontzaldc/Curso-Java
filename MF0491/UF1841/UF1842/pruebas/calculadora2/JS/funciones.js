@@ -9,46 +9,38 @@ window.addEventListener('DOMContentLoaded', function () {
     //inicializar los botones
     for (let i = 0; i < botones.length; i++) {
         botones[i].addEventListener('click', function () {
-
-            if (isNaN(+botones[i].textContent)) {
-                operacion=botones[i].textContent;
+            if (isNaN(+this.innerText)) {
                 numero=parseInt(numero,10);
-                console.log()
-
-                switch(botones[i].textContent){
-                    case "=":
-
-                        break;
-                    case "+":
-                        resultado+=numero;
-                        pantalla.value=resultado;
-                        break;
-                    case "*":
-                        resultado*=numero;
-                        pantalla.value=resultado;
-                        break;
-                    case "/":
-                            resultado/=numero;
-                            pantalla.value=resultado;
-                            break;
-                    case "-":
-                        resultado-=numero;
-                        pantalla.value=resultado;
-                        break;
-                    case ",":
-                        if(numero.includes(",")){
-                            
-                        }
-
-                }
-            }
+                operaciones(botones[i])
+            }   
             else{
-                numero=0;
-                numero+=botones[i].textContent;
+                numero+=this.textContent;
                 pantalla.value=+numero;
-                console.log(numero)
             }
         });
 
     }
+
+    function operaciones(valorBoton){
+    switch(valorBoton.textContent){
+        case "=":
+            operaciones(operacion)
+            break;
+        case "+":
+            resultado+=numero;
+            operacion=valorBoton;
+            break;
+        case "*":
+            resultado*=numero;
+            break;
+        case "/":
+            resultado/=numero;
+            break;
+        case "-":
+            resultado-=numero;
+            break;
+    }
+    
+    pantalla.value=resultado;
+}
 });
