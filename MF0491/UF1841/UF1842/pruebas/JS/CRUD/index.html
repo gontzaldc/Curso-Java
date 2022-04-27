@@ -2,46 +2,57 @@
     json-server 'nombre del archivo.json' -w 
     Comprobar si funciona sin live Server-->
 
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CRUD</title>
+<!DOCTYPE html>
+<html lang="es">
 
-        <link rel="stylesheet" href="CSS/bootstrap.min.css">
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/index.js"></script>
-    </head>
-    <body>
-        <section id="main">
-            
-        </section>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="recipient-name" class="col-form-label">Recipient:</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="mb-3">
-                      <label for="message-text" class="col-form-label">Message:</label>
-                      <textarea class="form-control" id="message-text"></textarea>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Send message</button>
-                </div>
-              </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body class="container-fluid">
+
+  <section class="row justify-content-center" id="main">
+
+  </section>
+  </div>
+  <div class="modal fade" id="modalDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="id" hidden>
             </div>
-          </div>
-    </body>
-    </html>
+            <div class="mb-3">
+              <label for="nombre-text" class="col-form-label">Nombre:</label>
+              <input class="form-control" id="nombre" type="text"></input>
+            </div>
+            <div class="mb-3">
+              <label for="descripcion-text" class="col-form-label">Descripcion:</label>
+              <textarea class="form-control" id="descripcion" rows="5"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="boton-guardar" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a id="botonNuevo" href="javascript:nuevo()"
+    class="position-fixed bottom-0 end-0 btn btn-lg fs-4 btn-primary shadow-sm border rounded-circle mb-3 me-3"
+    style="z-index: 2000"><i class="fa-solid fa-plus"></i></a>
+</body>
+
+</html>
