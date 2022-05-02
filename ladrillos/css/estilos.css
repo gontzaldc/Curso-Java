@@ -1,0 +1,10 @@
+#tabla{
+    width: 15rem;
+    height: 3rem;
+
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0;
+}
+
+canvas { background: #eee; }
