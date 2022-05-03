@@ -138,7 +138,7 @@ function ejercicio6(palabra) {
 //   - Una palabra es la misma aunque aparezca en mayúsculas y minúsculas.
 //   - No se pueden utilizar funciones propias del lenguaje que lo resuelvan automáticamente.
 
-function ejercicio7(texto){
+function ejercicio7(texto) {
 
 
 }
@@ -147,7 +147,7 @@ function ejercicio7(texto){
 //  Enunciado: Crea un programa se encargue de transformar un número decimal a binario 
 //  sin utilizar funciones propias del lenguaje que lo hagan directamente.
 
-function ejercicio8(){
+function ejercicio8() {
 
 
 }
@@ -159,7 +159,7 @@ function ejercicio8(){
 //     palabras "  ".
 //   - El alfabeto morse soportado será el mostrado en https://es.wikipedia.org/wiki/Código_morse.
 
-function ejercicio9(texto){
+function ejercicio9(texto) {
 
     const morseCode = {
         "A": ".-",
@@ -189,13 +189,109 @@ function ejercicio9(texto){
         "Z": "--..",
         " ": "/"
 
-     }
+    }
 
-     let morse="";
+    let morse = "";
 
-     for(let i=0; i<texto.length;i++){
-         morse+=morseCode[texto[i].toUpperCase()]+" ";
-     }
+    for (let i = 0; i < texto.length; i++) {
+        morse += morseCode[texto[i].toUpperCase()] + " ";
+    }
 
-     return morse;
+    return morse;
+}
+
+//  Ejercicio 10
+// Enunciado:Crea un programa que comprueba si los paréntesis, llaves y corchetes de una expresión están equilibrados.
+//   - Equilibrado significa que estos delimitadores se abren y cieran en orden y de forma correcta.
+//   - Paréntesis, llaves y corchetes son igual de prioritarios. No hay uno más importante que otro.
+//   - Expresión balanceada: { [ a * ( c + d ) ] - 5 }
+//   - Expresión no balanceada: { a * ( c + d ) ] - 5 }
+
+function ejercicio10(expresion) {
+    const regex = /\{.*\[.*\(.*\).*\].*\}/;
+
+    return regex.test(expresion) ? 'Expresión Balanceada' : 'Expresión no Balanceada';
+}
+
+//  Ejercicio 11
+//  Enunciado: Crea una función que reciba dos cadenas como parámetro (str1, str2) e imprima otras 
+//             dos cadenas como salida (out1, out2).
+//     - out1 contendrá todos los caracteres presentes en la str1 pero NO estén presentes en str2.
+//     - out2 contendrá todos los caracteres presentes en la str2 pero NO estén presentes en str1.
+
+function ejercicio11(str1, str2) {
+
+    str1 = str1.toUpperCase();
+    str2 = str2.toUpperCase();
+
+    let frase1 = str1.split(" ");
+    let frase2 = str2.split(" ");
+    let out1 = "", out2 = "";
+
+    console.log(frase1);
+
+    for (let i = 0; i < frase1.length; i++) {
+
+        if (!frase2.includes(frase1[i])) {
+            out1 += " " + frase1[i]
+        }
+    }
+
+    for (let i = 0; i < frase2.length; i++) {
+
+        if (!frase1.includes(frase2[i])) {
+            out2 += " " + frase2[i]
+        }
+    }
+
+
+    console.log('Palabras de str1 que no estan en str2 ->' + out1)
+    console.log('Palabras de str2 que no estan en str1 ->' + out2)
+
+}
+
+//  Ejercicio 12
+//  Enunciado: Escribe una función que reciba un texto y retorne verdadero o falso (Boolean) 
+//             según sean o no palíndromos.
+//  Un Palíndromo es una palabra o expresión que es igual si se lee de izquierda a derecha que de 
+//  derecha a izquierda.
+//  NO se tienen en cuenta los espacios, signos de puntuación y tildes.
+//  Ejemplo: Ana lleva al oso la avellana.
+
+function ejercicio12(frase) {
+
+    let texto;
+
+    frase = frase.replace(/\W|\_/g, '')
+    texto = frase.toUpperCase();
+    const arrInversa = [];
+
+    for (let i = 0; i < texto.length; i++) {
+
+        arrInversa.unshift(texto[i]);
+    }
+
+    const fraseInversa = arrInversa.join('');
+
+    return fraseInversa === texto ? 'Palíndroma' : 'NO Palíndroma';
+}
+
+//  Ejercicio 13
+//  Enunciado: Escribe una función que calcule y retorne el factorial de un número dado de forma recursiva.
+
+function ejercicio13(num, cal) {
+    if (!isNaN(cal)) {
+        if (cal === 0) {
+            return num;
+        }
+        else {
+            ejercicio13(num *= num - 1, cal - 1)
+        }
+       
+    }
+    else {
+
+        cal = num;
+        ejercicio13(num,cal)
+    }
 }
