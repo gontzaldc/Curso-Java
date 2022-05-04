@@ -281,17 +281,65 @@ function ejercicio12(frase) {
 
 function ejercicio13(num, cal) {
     if (!isNaN(cal)) {
-        if (cal === 0) {
-            return num;
+        if (cal === 1) {
+            console.log(num)
+            return num
         }
         else {
-            ejercicio13(num *= num - 1, cal - 1)
+            ejercicio13(num *= cal - 1, --cal)
         }
-       
+
     }
     else {
-
         cal = num;
-        ejercicio13(num,cal)
+        ejercicio13(num, cal)
     }
+}
+
+//  Ejercicio 14
+//  Enunciado: Escribe una función que calcule si un número dado es un número de Armstrong 
+//             (o también llamado narcisista).
+//   Si no conoces qué es un número de Armstrong, debes buscar información al respecto.
+
+function ejercicio14(numero) {
+    let resultado = 0;
+
+    for (let i = 0; i < numero.toString().length; i++) {
+        resultado += +Math.pow(numero.toString()[i], +numero.toString().length);
+        console.log(+numero.toString()[i] + " ^ " + +numero.toString().length + " = " + +Math.pow(numero.toString()[i], +numero.toString().length))
+    }
+
+    console.log('Suma de todos los números = ' + resultado)
+    return resultado === numero ? 'Es un número Armstrong' : 'No es un número Armstrong';
+}
+
+//  Ejercicio 15
+//  Enunciado: Crea una función que calcule y retorne cuántos días hay entre dos cadenas de texto que 
+//             representen fechas.
+//   - Una cadena de texto que representa una fecha tiene el formato "dd/MM/yyyy".
+//   - La función recibirá dos String y retornará un Int.
+//   - La diferencia en días será absoluta (no importa el orden de las fechas).
+//   - Si una de las dos cadenas de texto no representa una fecha correcta se lanzará una excepción.
+
+function ejercicio15() {
+
+}
+
+//  Ejercicio 16
+// Enunciado: Crea una función que reciba un String de cualquier tipo y se encargue de
+//            poner en mayúscula la primera letra de cada palabra.
+//  - No se pueden utilizar operaciones del lenguaje que lo resuelvan directamente.
+
+function ejercicio16(texto){
+
+    let fraseFinal="";
+    
+    let arrTexto = texto.split(" ");
+    const ArrFinal = [];
+    for (let i = 0; i < arrTexto.length; i++) {
+        ArrFinal.push(arrTexto[i].replace(arrTexto[i][0],arrTexto[i][0].toUpperCase())+" ")
+    }
+
+    fraseFinal= ArrFinal.join('')
+    return fraseFinal   
 }
