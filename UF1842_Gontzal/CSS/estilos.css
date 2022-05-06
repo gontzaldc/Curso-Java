@@ -1,0 +1,95 @@
+:root {
+    --padding: 0.5rem;
+    --color-fondo: rgb(192, 190, 190);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: sans-serif;
+    background-color: var(--color-fondo)
+}
+
+body>nav {
+    background-color: blue;
+}
+
+/* Lista cabecera */
+
+body>nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+body>nav ul li {
+    list-style: none;
+    padding: var(--padding);
+}
+
+body>nav ul li a {
+    color: black;
+}
+
+/* Párrafos*/
+
+p {
+    font-size: 12px;
+}
+
+/* cabecera H1*/
+
+h1 {
+    font-size: 25px;
+    color: rgb(1, 1, 92);
+}
+
+/* Tabla */
+table {
+    width: 100%;
+}
+
+table thead {
+    background-color: rgb(1, 1, 80);
+    color: #fff;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: rgb(175, 219, 245);
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+th,
+td {
+    padding: var(--padding);
+}
+
+/* Enlaces */
+
+a:visited {
+    color: #C8A2C8;
+}
+
+a:hover {
+    color: red;
+}
+
+a {
+    font-weight: bold;
+}
+
+/* Imagen */
+
+
+img {
+    width: 40%;
+    
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
