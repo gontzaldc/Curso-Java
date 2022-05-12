@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado</title>
+    <!-- iconos -->
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body id="top" class="h-100">
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a href="index.html">
+                <img src="imgs/logo.png" style="width:100px;" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Administracion</a>
+                    </li>
+
+
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login <i
+                                class="fa-solid fa-arrow-right-to-bracket"></i></a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid">
+
+        <!-- Productos -->
+        <section id="productos" class="row justify-content-md-center p-2">
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">20%</h5>
+                <img src="imgs/beefeter.jpg" class="card-img-top" alt="imagen Botella Beefeter">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">13,35€ </del> 7,90€</h5>
+                    <p class="card-text fw-light">18,50€ / litro</p>
+                    <p class="card-text ">beefeter ginebra inglesa, botella 70 cl</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+                <img src="imgs/aceite.jpg" class="card-img-top" alt="imagen Botella aceite">
+                <div class="card-body">
+                    <h5 class="card-title"> 5,60€</h5>
+                    <p class="card-text fw-light">5,60€ / litro</p>
+                    <p class="card-text ">botella de aceite botella 1 l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">10%</h5>
+                <img src="imgs/leche.jpg" class="card-img-top" alt="imagen Botella leche">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">2,35€ </del> 1,90€</h5>
+                    <p class="card-text fw-light">1,7€ / litro</p>
+                    <p class="card-text ">Botella leche Asturiana, 1,5l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">20%</h5>
+                <img src="imgs/patatas.jpg" class="card-img-top" alt="imagen bolsa de patatas">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">5€ </del> 4,8€</h5>
+                    <p class="card-text fw-light">0.5€ / Kilo</p>
+                    <p class="card-text ">Bolsa de patatas El corte ingles 5kg</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+                <img src="imgs/aquarius.jpg" class="card-img-top" alt="imagen Botella aquarius">
+                <div class="card-body">
+                    <h5 class="card-title"> 2,3€</h5>
+                    <p class="card-text fw-light">1,7€ / litro</p>
+                    <p class="card-text ">botella de aquarius de 1,5 l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">20%</h5>
+                <img src="imgs/beefeter.jpg" class="card-img-top" alt="imagen Botella Beefeter">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">13,35€ </del> 7,90€</h5>
+                    <p class="card-text fw-light">18,50€ / litro</p>
+                    <p class="card-text ">beefeter ginebra inglesa, botella 70 cl</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+                <img src="imgs/aceite.jpg" class="card-img-top" alt="imagen Botella aceite">
+                <div class="card-body">
+                    <h5 class="card-title"> 5,60€</h5>
+                    <p class="card-text fw-light">5,60€ / litro</p>
+                    <p class="card-text ">botella de aceite botella 1 l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">10%</h5>
+                <img src="imgs/leche.jpg" class="card-img-top" alt="imagen Botella leche">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">2,35€ </del> 1,90€</h5>
+                    <p class="card-text fw-light">1,7€ / litro</p>
+                    <p class="card-text ">Botella leche Asturiana, 1,5l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">20%</h5>
+                <img src="imgs/patatas.jpg" class="card-img-top" alt="imagen bolas patatas">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">5€ </del> 4,8€</h5>
+                    <p class="card-text fw-light">0.5€ / Kilo</p>
+                    <p class="card-text ">Bolsa de patatas El corte ingles 5kg</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+                <img src="imgs/aquarius.jpg" class="card-img-top" alt="imagen Botella aquarius">
+                <div class="card-body">
+                    <h5 class="card-title"> 2,3€</h5>
+                    <p class="card-text fw-light">1,7€ / litro</p>
+                    <p class="card-text ">botella de aquarius de 1,5 l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">10%</h5>
+                <img src="imgs/leche.jpg" class="card-img-top" alt="imagen Botella leche">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">2,35€ </del> 1,90€</h5>
+                    <p class="card-text fw-light">1,7€ / litro</p>
+                    <p class="card-text ">Botella leche Asturiana, 1,5l</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="card m-1 col-xs-12 col-md-4 col-lg-2">
+
+                <h5 class="card-title position-absolute top-0 start-0 btn-danger rounded-circle p-1">20%</h5>
+                <img src="imgs/patatas.jpg" class="card-img-top" alt="imagen Bolsa de patatas">
+                <div class="card-body">
+                    <h5 class="card-title"><del class="fw-light pr-2">5€ </del> 4,8€</h5>
+                    <p class="card-text fw-light">0.5€ / Kilo</p>
+                    <p class="card-text ">Bolsa de patatas El corte ingles 5kg</p>
+                    <div class="input-group mb-3 justify-content-center">
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">-</a>
+                        </div>
+                        <div class="input-group-text">
+                            1
+                        </div>
+                        <div class="input-group-text">
+                            <a href="#" class="btn p-0 fw-bold">+</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-success w-100">Añadir al carrito</a>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-light text-center pt-3 mt-auto">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">política de Privacidad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Localización</a>
+            </li>
+        </ul>
+        <hr>
+        <p>
+            <a href="https://es-es.facebook.com/" class="text-light"> <i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" class="text-light"> <i class="fa-brands fa-twitter"></i></a>
+        </p>
+        <a href="#top"
+            class="d-block d-sm-none position-fixed bottom-0 end-0 btn btn-lg fs-4 btn-primary shadow-sm border rounded-pill mb-3 me-3 "
+            style="z-index: 2000"><i class="fa-solid fa-angle-up"></i></a>
+        <p>&copy; 2022 Gontzal De Carlos</p>
+    </footer>
+</body>
+
+</html>

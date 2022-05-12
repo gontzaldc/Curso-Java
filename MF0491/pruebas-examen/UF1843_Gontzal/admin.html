@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado-Administración</title>
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="CSS/all.min.css">
+
+    <!-- Datatables + bootstrap-->
+    <link rel="stylesheet" href="CSS/datatables.min.css">
+    <script src="JS/datatables.min.js"></script>
+
+    <!-- Datatable script -->
+    <script>
+        $(function () {
+            $('table').DataTable();
+        });
+    </script>
+</head>
+
+<body class="h-100">
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="index.html">
+                <img src="imgs/logo.png" style="width:100px;" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Administracion</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">Administrador</span>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Logout <i
+                                class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid">
+        <!-- Sección dormulario para añadir producto -->
+        <section id="formularioAñadir" class="p-2">
+            <form action="#" class="p-2">
+                <fieldset class="col-xl-6 order-xl-1">
+                    <legend>Añadir Producto</legend>
+                    <div>
+                        <label class="form-label" for="id">Id</label>
+                        <input class="form-control" type="number" id="id" readonly>
+                    </div>
+                    <div>
+                        <label class="form-label" for="nombre">Nombre del Producto</label>
+                        <input class="form-control" type="text" id="nombre" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="precio">Precio</label>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="precio" required>
+                            <span class="input-group-text">€</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="precio-cantidad">Precio / Cantidad</label>
+                        <div class="input-group mb-3">
+                            <input type="text" id="precio-cantidad" class="form-control"
+                                aria-label="Text input with dropdown button">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Selecciona </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Kilo</a></li>
+                                <li><a class="dropdown-item" href="#">Litro</a></li>
+                                <li><a class="dropdown-item" href="#">Metro</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="descripcion">Descripción</label>
+                        <textarea class="form-control" type="text" id="descripcion" required></textarea>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="imagen">Imagen</label>
+                        <input class="form-control" type="file" id="imagen" accept="image/png, image/jpeg"
+                            required></input>
+
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Guardar</button>
+                    </div>
+                </fieldset>
+
+
+            </form>
+
+        </section>
+
+        <!-- Seccion tabla de poroductos -->
+
+        <section id="tablaProductos" class="p-2">
+            <h3>Tabla Productos</h3>
+
+
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Precio-Cantidad</th>
+                        <th>Descuento</th>
+                        <th>Descripcion</th>
+                        <th>Imagen</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Beefeter</td>
+                        <td>13,75€</td>
+                        <td>18,50€/litro</td>
+                        <td>20%</td>
+                        <td>beefeter ginebra inglesa, botella 70 cl</td>
+                        <td><img src="imgs/beefeter.jpg" class="card-img-top" alt="imagen Botella Beefeter"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Aceite</td>
+                        <td>5,6€</td>
+                        <td>5,6€/litro</td>
+                        <td>0%</td>
+                        <td>aceite btella 1l</td>
+                        <td><img src="imgs/aceite.jpg" class="card-img-top" alt="imagen Botella aceite"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>patatas</td>
+                        <td>3€</td>
+                        <td>0,5€/litro</td>
+                        <td>20%</td>
+                        <td>Bolsa de patatas de 5kg</td>
+                        <td><img src="imgs/patatas.jpg" class="card-img-top" alt="imagen bolsa de patatas"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>Aquarius</td>
+                        <td>2,3€</td>
+                        <td>1,5€/litro</td>
+                        <td>0%</td>
+                        <td>botella de aquiarius 1,5l</td>
+                        <td><img src="imgs/aquarius.jpg" class="card-img-top" alt="Botella de aquarius"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>Leche</td>
+                        <td>2,3€</td>
+                        <td>1,4€/litro</td>
+                        <td>10%</td>
+                        <td>botella de leche 1,5l</td>
+                        <td><img src="imgs/leche.jpg" class="card-img-top" alt="Botella de leche" style="width:50px;">
+                        </td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Beefeter</td>
+                        <td>13,75€</td>
+                        <td>18,50€/litro</td>
+                        <td>20%</td>
+                        <td>beefeter ginebra inglesa, botella 70 cl</td>
+                        <td><img src="imgs/beefeter.jpg" class="card-img-top" alt="imagen Botella Beefeter"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Aceite</td>
+                        <td>5,6€</td>
+                        <td>5,6€/litro</td>
+                        <td>0%</td>
+                        <td>aceite btella 1l</td>
+                        <td><img src="imgs/aceite.jpg" class="card-img-top" alt="imagen Botella aceite"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>patatas</td>
+                        <td>3€</td>
+                        <td>0,5€/litro</td>
+                        <td>20%</td>
+                        <td>Bolsa de patatas de 5kg</td>
+                        <td><img src="imgs/patatas.jpg" class="card-img-top" alt="imagen bolsa de patatas"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>Aquarius</td>
+                        <td>2,3€</td>
+                        <td>1,5€/litro</td>
+                        <td>0%</td>
+                        <td>botella de aquiarius 1,5l</td>
+                        <td><img src="imgs/aquarius.jpg" class="card-img-top" alt="Botella de aquarius"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>Leche</td>
+                        <td>2,3€</td>
+                        <td>1,4€/litro</td>
+                        <td>10%</td>
+                        <td>botella de leche 1,5l</td>
+                        <td><img src="imgs/leche.jpg" class="card-img-top" alt="Botella de leche" style="width:50px;">
+                        </td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Aquarius</td>
+                        <td>2,3€</td>
+                        <td>1,5€/litro</td>
+                        <td>0%</td>
+                        <td>botella de aquiarius 1,5l</td>
+                        <td><img src="imgs/aquarius.jpg" class="card-img-top" alt="Botella de aquarius"
+                                style="width:50px;"></td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>Leche</td>
+                        <td>2,3€</td>
+                        <td>1,4€/litro</td>
+                        <td>10%</td>
+                        <td>botella de leche 1,5l</td>
+                        <td><img src="imgs/leche.jpg" class="card-img-top" alt="Botella de leche" style="width:50px;">
+                        </td>
+                        <td><a class="btn btn-primary btn-sm" href="#">Modificar</a><a class="btn btn-danger btn-sm"
+                                href="#">Borrar</a></td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="#">Añadir</a>
+                    </td>
+                </tfoot>
+            </table>
+
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light text-center pt-3 mt-auto">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">política de Privacidad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Localización</a>
+            </li>
+        </ul>
+        <hr>
+        <p>
+            <a href="https://es-es.facebook.com/" class="text-light"> <i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" class="text-light"> <i class="fa-brands fa-twitter"></i></a>
+        </p>
+        <a href="#arriba"
+            class="d-block d-sm-none position-fixed bottom-0 end-0 btn btn-lg fs-4 btn-primary shadow-sm border rounded-pill mb-3 me-3 "
+            style="z-index: 2000"><i class="fa-solid fa-angle-up"></i></a>
+        <p>&copy; 2022 Gontzal De Carlos</p>
+    </footer>
+</body>
+
+</html>
