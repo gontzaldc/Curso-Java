@@ -11,7 +11,14 @@ public class sintaxis {
 
 	public static void main(String[] args) {
 		tipos();
+		colecciones();
 
+		
+	}
+
+
+	private static void colecciones() {
+		
 		
 	}
 
