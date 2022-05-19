@@ -1,20 +1,26 @@
 package com.gontzal.ipartek.uf1844;
 
-import java.io.Console;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ahorcado {
 	public static void main(String[] args) {
-				
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Introduce una palabra para adivinar: ");
 
-		String[] palabra = sc.nextLine().split("");
+		List<String> palabra = new ArrayList<String>();
+
+		for (String letra : sc.nextLine().split("")) {
+
+			palabra.add(letra);
+		}
+
 		String intento;
 
-		for (int i = 0; i < palabra.length; i++) {
+		for (int i = 0; i < palabra.size(); i++) {
 			System.out.print("_ ");
 		}
 
@@ -28,15 +34,15 @@ public class ahorcado {
 
 	}
 
-	private static Boolean comprobarpalabra(String intento, String[] palabra) {
+	private static Boolean comprobarpalabra(String intento, List<String> palabra) {
 
 		String[] Arr = intento.split("");
 
 		System.out.println();
-		if (intento.length() == palabra.length) {
-			for (int i = 0; i < palabra.length; i++) {
+		if (intento.length() == palabra.size()) {
+			for (int i = 0; i < palabra.size(); i++) {
 
-				if (Arr[i].equals(palabra[i])) {
+				if (Arr[i].equals(palabra.get(i))) {
 					System.out.print(Arr[i] + " ");
 				} else {
 					System.out.print("_ ");
