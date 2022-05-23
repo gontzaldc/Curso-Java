@@ -51,5 +51,6 @@ public class pruebalibro {
         } else {
             System.out.println("No hay ejemplares del libro " + lib1.getTitulo() + " prestados");
         }
-	}
+		sc.close();
+        }
 }
