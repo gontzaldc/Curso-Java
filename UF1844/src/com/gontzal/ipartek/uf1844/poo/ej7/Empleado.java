@@ -2,7 +2,7 @@ package com.gontzal.ipartek.uf1844.poo.ej7;
 
 public class Empleado {
 
-	private static double pagoHorasExtra;
+	private static double pagoHorasExtra=10;
 	private String nif;
 	private String nombre;
 	private double sueldoBase;
