@@ -1,7 +1,6 @@
 package com.gontzal.ipartek.uf1844.poo.ej6;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Fecha {
 
