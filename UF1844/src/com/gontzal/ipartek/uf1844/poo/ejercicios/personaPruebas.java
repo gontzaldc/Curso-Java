@@ -40,5 +40,7 @@ public class personaPruebas {
 		System.out.println("Tú peso esta en: " + (imc > 0 ? "SOBREPESO" : imc < 0 ? "PESO BAJO" : "PESO IDEAL"));
 		System.out.println(mayor?"Mayor de edad":"Menor de edad");
 		System.out.println(per1);
+		
+		sc.close();
 	}
 }
