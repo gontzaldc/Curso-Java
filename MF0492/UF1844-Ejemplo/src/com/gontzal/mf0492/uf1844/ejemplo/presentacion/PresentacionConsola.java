@@ -1,11 +1,6 @@
 package com.gontzal.mf0492.uf1844.ejemplo.presentacion;
 
-import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.errorPl;
-import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.pedirBigDecimal;
-import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.pedirInt;
-import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.pedirLong;
-import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.pedirString;
-import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.pl;
+import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -64,7 +59,7 @@ public class PresentacionConsola {
 			break;
 
 		case 4:
-			pl("Modificando datos");
+			modificarEmpleado();
 			break;
 
 		case 5:
@@ -75,25 +70,49 @@ public class PresentacionConsola {
 			pl("Gracias por utilizar la aplicación");
 			break;
 		default:
-			errorPl("Elija una de las Opciones existentes");
+			errorPl("Elija una de las opciones existentes");
 		}
 
 	}
 
+	
+
 	private static void buscarPorId() {
-		pl(DAO.obtenerPorId(pedirLong("Introduce el id")));
+		Long id = pedirLong("Introduce el ID");
+		Empleado empleado = DAO.obtenerPorId(id);
+		mostrarFicha(empleado);
+
+	}
+
+	private static void mostrarFicha(Empleado empleado) {
+		pl(empleado);
 
 	}
 
 	private static void crearEmpleado() {
-		String nif,nombre;
-		BigDecimal sueldo;
+
+		String nif = pedirString("Introduce el NIF");
+		String nombre = pedirString("Introduce el Nombre");
+		LocalDate fechaNacimiento = pedirLocalDate("Introduce Fecha de Nacimiento");
+		BigDecimal sueldo = pedirBigDecimal("Introduce el sueldo");
+
+		Empleado empleado = new Empleado(null, nif, nombre, fechaNacimiento, sueldo);
+
+		DAO.insertar(empleado);
+	}
+	
+	private static void modificarEmpleado() {
+		Long id= pedirLong("Introduce el ID el que quieres modificar");
+		String nif = pedirString("Introduce el NIF");
+		String nombre = pedirString("Introduce el Nombre");
+		LocalDate fechaNacimiento = pedirLocalDate("Introduce Fecha de Nacimiento");
+		BigDecimal sueldo = pedirBigDecimal("Introduce el sueldo");
+
+		Empleado empleado = new Empleado(id, nif, nombre, fechaNacimiento, sueldo);
+
+		DAO.modificar(empleado);
 		
-		nif= pedirString("Introduce el NIF");
-		nombre= pedirString("Introduce el Nombre");
-		sueldo=pedirBigDecimal("Introduce el sueldo");
 		
-		DAO.insertar(new Empleado(0L, nif, nombre, LocalDate.of(1999, 3, 3), sueldo));
 	}
 
 	private static void mostrarTodos() {
@@ -107,9 +126,11 @@ public class PresentacionConsola {
 		pl(e);
 
 	}
-	
+
 	private static void borrarEmpleado() {
 		mostrarTodos();
-		DAO.borrar(pedirLong("Elige el Empleado que quieres borrar"));
+		
+		Long id =pedirLong("Elige el Empleado que quieres borrar");
+		DAO.borrar(id);
 	}
 }
