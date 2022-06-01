@@ -2,6 +2,7 @@ package com.gontzal.mf0492.uf1844.ejemplo.bibliotecas;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Consola {
@@ -20,14 +21,46 @@ public class Consola {
 		System.err.println(o);
 	}
 
-	public static int pedirInt(String mensaje) {
-		String texto = pedirString(mensaje);
-		return Integer.parseInt(texto);
+	public static Integer pedirInt(String mensaje) {
+
+		boolean repetir = true;
+		Integer i = null;
+		String texto;
+		do {
+
+			try {
+				texto = pedirString(mensaje);
+				i = Integer.parseInt(texto);
+				repetir = false;
+			} catch (NumberFormatException ex) { // handle your exception
+				errorPl("No es un número");
+			}
+
+		} while (repetir);
+
+		return i;
+
 	}
 
 	public static Long pedirLong(String mensaje) {
-		String texto = pedirString(mensaje);
-		return Long.parseLong(texto);
+
+		boolean repetir = true;
+		Long l = null;
+		String texto;
+		do {
+
+			try {
+				texto = pedirString(mensaje);
+				l = Long.parseLong(texto);
+				repetir = false;
+			} catch (NumberFormatException ex) { // handle your exception
+				errorPl("No es un número");
+			}
+
+		} while (repetir);
+
+		return l;
+
 	}
 
 	public static String pedirString(String mensaje) {
@@ -36,14 +69,47 @@ public class Consola {
 	}
 
 	public static BigDecimal pedirBigDecimal(String mensaje) {
-		return new BigDecimal(pedirString(mensaje));
-//		p(mensaje + ": ");
-//		return new BigDecimal(sc.nextLine());
+
+		boolean repetir = true;
+		BigDecimal bg = null;
+		String texto;
+		do {
+
+			try {
+				texto = pedirString(mensaje);
+				bg = new BigDecimal(texto);
+				repetir = false;
+			} catch (NumberFormatException ex) { // handle your exception
+				errorPl("No es un número");
+			}
+
+		} while (repetir);
+
+		return bg;
+
 	}
 
 	public static LocalDate pedirLocalDate(String mensaje) {
 
-		String texto = pedirString(mensaje);
-		return LocalDate.parse(texto);
+		boolean repetir = true;
+		String texto;
+		LocalDate ld = null;
+
+		do {
+			try {
+				texto = pedirString(mensaje);
+
+				if (texto == null || texto.trim().length() == 0) {
+					return null;
+				}
+
+				ld = LocalDate.parse(texto);
+				repetir = false;
+			} catch (DateTimeParseException e) {
+				pl("No es una fecha válida");
+			}
+		} while (repetir);
+
+		return ld;
 	}
 }
