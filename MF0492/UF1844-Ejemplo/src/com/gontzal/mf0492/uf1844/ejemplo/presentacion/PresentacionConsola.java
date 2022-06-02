@@ -13,7 +13,6 @@ import com.gontzal.mf0492.uf1844.ejemplo.entidades.EntidadesException;
 public class PresentacionConsola {
 
 	private static final DaoEmpleado DAO = DaoEmpleadoMemoria.getInstancia();
-
 	public static void main(String[] args) {
 
 		int opcion;
