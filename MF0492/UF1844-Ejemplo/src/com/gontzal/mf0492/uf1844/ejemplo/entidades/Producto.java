@@ -16,6 +16,10 @@ public class Producto {
 		setStock(stock);
 		setDescripcion(descripcion);
 	}
+	
+	public Producto() {
+		
+	}
 
 	public Long getId() {
 		return id;

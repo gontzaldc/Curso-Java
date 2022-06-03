@@ -69,7 +69,7 @@ public class PresentacionConsola {
 		case 0:
 			pl("Gracias por utilizar la aplicación");
 			break;
-		default:
+		default:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 			errorPl("Elija una de las opciones existentes");
 		}
 

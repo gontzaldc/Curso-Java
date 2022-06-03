@@ -68,12 +68,14 @@ public class DaoProductoMemoria implements DaoProducto {
 	public Iterable<Producto> obtenerPorNombre(String nombre) {
 		ArrayList<Producto> ArrP = new ArrayList<>();
 		for (Producto p : productos.values()) {
-			if (p.getNombre().matches(".*" + nombre + ".*")) {
+			if (p.getNombre().toLowerCase().matches(".*" + nombre.toLowerCase() + ".*")) {
 				ArrP.add(p);
 			}
 		}
 
 		return ArrP;
 	}
+
+	
 
 }
