@@ -17,6 +17,10 @@ public class Consola {
 		System.out.println(o);
 	}
 
+	public static void pl() {
+		System.out.println();
+	}
+
 	public static void errorPl(Object o) {
 		System.err.println(o);
 	}
@@ -68,6 +72,25 @@ public class Consola {
 		return sc.nextLine();
 	}
 
+	public static Character pedirCaracter(String mensaje) {
+		boolean repetir = true;
+		Character c = null;
+		String texto;
+		do {
+
+			try {
+				texto = pedirString(mensaje);
+				c = texto.charAt(0);
+				repetir = false;
+			} catch (StringIndexOutOfBoundsException ex) { // handle your exception
+				errorPl("No se ha introducidon ningún caracter");
+			}
+
+		} while (repetir);
+
+		return c;
+	}
+
 	public static BigDecimal pedirBigDecimal(String mensaje) {
 
 		boolean repetir = true;
@@ -112,4 +135,5 @@ public class Consola {
 
 		return ld;
 	}
+
 }

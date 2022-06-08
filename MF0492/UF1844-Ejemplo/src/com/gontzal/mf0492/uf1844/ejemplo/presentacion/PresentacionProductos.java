@@ -5,12 +5,13 @@ import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.*;
 import java.math.BigInteger;
 
 import com.gontzal.mf0492.uf1844.ejemplo.accesoadatos.DaoProducto;
-import com.gontzal.mf0492.uf1844.ejemplo.accesoadatos.DaoProductoMemoria;
+import com.gontzal.mf0492.uf1844.ejemplo.accesoadatos.DaoProductoServlet;
+import com.gontzal.mf0492.uf1844.ejemplo.entidades.EntidadesException;
 import com.gontzal.mf0492.uf1844.ejemplo.entidades.Producto;
 
 public class PresentacionProductos {
 
-	private static final DaoProducto DAOP = DaoProductoMemoria.getInstancia();
+	private static final DaoProducto DAOP = DaoProductoServlet.getInstancia();
 
 	public static void main(String[] args) {
 		int opcion;
@@ -84,13 +85,27 @@ public class PresentacionProductos {
 
 	private static void buscarPorNombre() {
 		String nombre = pedirString("introduce nombre del producto para buscarlo");
-	
+
+		
 		cabeceraProductos();
 		for (Producto p : DAOP.obtenerPorNombre(nombre)) {
-	
+
 			mostrarProductos(p);
 		}
 		pieProductos();
+	}
+
+	private static void validarPeticion(Runnable pd) {
+		boolean repetir = true;
+
+		do {
+			try {
+				pd.run();
+				repetir = false;
+			} catch (EntidadesException e) {
+				pl(e.getMessage());
+			}
+		} while (repetir);
 	}
 
 	private static void insertarProductos() {
@@ -98,9 +113,9 @@ public class PresentacionProductos {
 		Producto producto = new Producto();
 
 		pl("introduciendo producto...");
-		producto.setNombre(pedirString("Introduce el nombre"));
-		producto.setStock(BigInteger.valueOf(pedirInt("Introduce el stock")));
-		producto.setDescripcion(pedirString("Introduce una descripcion corta"));
+		validarPeticion(() -> producto.setNombre(pedirString("Introduce el nombre")));
+		validarPeticion(() -> producto.setStock(BigInteger.valueOf(pedirInt("Introduce el stock"))));
+		validarPeticion(() -> producto.setDescripcion(pedirString("Introduce una descripción corta")));
 
 		DAOP.insertar(producto);
 

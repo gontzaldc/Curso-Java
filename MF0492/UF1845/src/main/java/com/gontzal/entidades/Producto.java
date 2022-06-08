@@ -1,4 +1,4 @@
-package com.gontzal.mf0492.uf1844.ejemplo.entidades;
+package com.gontzal.entidades;
 
 import java.math.BigInteger;
 import java.util.Objects;
@@ -90,3 +90,4 @@ public class Producto {
 	}
 
 }
+
