@@ -1,12 +1,12 @@
-package com.gontzal.mf0492.uf1844.ejemplo.accesoadatos;
+package com.gontzal.accesoadatos;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-import com.gontzal.mf0492.uf1844.ejemplo.entidades.Producto;
+import com.gontzal.entidades.Producto;
 
-public class DaoProductoServlet implements DaoProducto {
+public class DaoProductoMemoria implements DaoProducto {
 
 	private static final TreeMap<Long, Producto> productos = new TreeMap<>();
 
@@ -17,12 +17,12 @@ public class DaoProductoServlet implements DaoProducto {
 	}
 
 	// SINGLETON
-	private DaoProductoServlet() {
+	private DaoProductoMemoria() {
 	}
 
-	private static final DaoProductoServlet INSTANCIA = new DaoProductoServlet();
+	private static final DaoProductoMemoria INSTANCIA = new DaoProductoMemoria();
 
-	public static DaoProductoServlet getInstancia() {
+	public static DaoProductoMemoria getInstancia() {
 		return INSTANCIA;
 	}
 	// FIN SENGLETON

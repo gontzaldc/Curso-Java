@@ -3,6 +3,7 @@ package com.gontzal.servlets;
 import java.io.IOException;
 
 import com.gontzal.accesoadatos.DaoProducto;
+import com.gontzal.accesoadatos.DaoProductoMemoria;
 import com.gontzal.accesoadatos.DaoProductoServlet;
 import com.gontzal.entidades.Producto;
 
@@ -17,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 @WebServlet("/hola")
 public class HolaMundo extends HttpServlet {
-	private static final DaoProducto DAO = DaoProductoServlet.getInstancia();
+	private static final DaoProducto DAO = DaoProductoMemoria.getInstancia();
 
 	private static final long serialVersionUID = 1L;
 
