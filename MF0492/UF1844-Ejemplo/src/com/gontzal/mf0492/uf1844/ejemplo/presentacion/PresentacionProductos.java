@@ -5,13 +5,14 @@ import static com.gontzal.mf0492.uf1844.ejemplo.bibliotecas.Consola.*;
 import java.math.BigInteger;
 
 import com.gontzal.mf0492.uf1844.ejemplo.accesoadatos.DaoProducto;
+import com.gontzal.mf0492.uf1844.ejemplo.accesoadatos.DaoProductoMemoria;
 import com.gontzal.mf0492.uf1844.ejemplo.accesoadatos.DaoProductoServlet;
 import com.gontzal.mf0492.uf1844.ejemplo.entidades.EntidadesException;
 import com.gontzal.mf0492.uf1844.ejemplo.entidades.Producto;
 
 public class PresentacionProductos {
 
-	private static final DaoProducto DAOP = DaoProductoServlet.getInstancia();
+	private static final DaoProducto DAOP = DaoProductoMemoria.getInstancia();
 
 	public static void main(String[] args) {
 		int opcion;

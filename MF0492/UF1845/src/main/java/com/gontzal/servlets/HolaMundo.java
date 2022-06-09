@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import com.gontzal.accesoadatos.DaoProducto;
 import com.gontzal.accesoadatos.DaoProductoMemoria;
-import com.gontzal.accesoadatos.DaoProductoServlet;
 import com.gontzal.entidades.Producto;
 
 import jakarta.servlet.ServletException;
