@@ -12,34 +12,26 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class HolaMundo
- */
-@WebServlet("/hola")
-public class HolaMundo extends HttpServlet {
+@WebServlet("/mostrar")
+public class Mostrar extends HttpServlet {
 	private static final DaoProducto DAO = DaoProductoMemoria.getInstancia();
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public HolaMundo() {
+	public Mostrar() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		Iterable<Producto> lista = DAO.obtenerTodos();
 		String busqueda = request.getParameter("busqueda");
+
 		if (busqueda != null) {
 			lista = DAO.obtenerPorNombre(busqueda);
 		}
+		response.setContentType("text/plain");
 		for (Producto p : lista) {
 			response.getWriter().println("ID: " + p.getId());
 			response.getWriter().println("Nombre: " + p.getNombre());
@@ -49,13 +41,8 @@ public class HolaMundo extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
