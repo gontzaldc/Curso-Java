@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.gontzal.accesoadatos.DaoProducto;
 import com.gontzal.accesoadatos.DaoProductoMemoria;
-import com.gontzal.entidades.Producto;
+import com.gontzal.servlets.modelos.Producto;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -36,7 +36,7 @@ public class Mostrar extends HttpServlet {
 			response.getWriter().println("ID: " + p.getId());
 			response.getWriter().println("Nombre: " + p.getNombre());
 			response.getWriter().println("Descripcion: " + p.getDescripcion());
-			response.getWriter().println("Descripcion: " + p.getStock());
+			response.getWriter().println("Stock: " + p.getStock());
 		}
 
 	}

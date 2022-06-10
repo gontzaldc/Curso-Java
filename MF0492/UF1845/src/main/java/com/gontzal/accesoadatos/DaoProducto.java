@@ -1,6 +1,6 @@
 package com.gontzal.accesoadatos;
 
-import com.gontzal.entidades.Producto;
+import com.gontzal.servlets.modelos.Producto;
 
 public interface DaoProducto extends Dao<Producto>{
 

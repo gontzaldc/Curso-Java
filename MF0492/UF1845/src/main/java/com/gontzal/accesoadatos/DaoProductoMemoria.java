@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-import com.gontzal.entidades.Producto;
+import com.gontzal.servlets.modelos.Producto;
 
 public class DaoProductoMemoria implements DaoProducto {
 

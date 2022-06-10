@@ -5,7 +5,7 @@ import java.math.BigInteger;
 
 import com.gontzal.accesoadatos.DaoProducto;
 import com.gontzal.accesoadatos.DaoProductoMemoria;
-import com.gontzal.entidades.Producto;
+import com.gontzal.servlets.modelos.Producto;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -20,10 +20,10 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/insertar")
 public class insertar extends HttpServlet {
 
-	private static final DaoProducto DAO = DaoProductoMemoria.getInstancia();
+
 	private static final long serialVersionUID = 1L;
        
-	
+	private static final DaoProducto DAO = DaoProductoMemoria.getInstancia();
 	
     public insertar() {
         super();

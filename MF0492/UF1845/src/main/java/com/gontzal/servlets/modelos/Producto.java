@@ -1,4 +1,4 @@
-package com.gontzal.entidades;
+package com.gontzal.servlets.modelos;
 
 import java.math.BigInteger;
 import java.util.Objects;
@@ -90,4 +90,3 @@ public class Producto {
 	}
 
 }
-

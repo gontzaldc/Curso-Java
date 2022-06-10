@@ -1,4 +1,4 @@
-package com.gontzal.entidades;
+package com.gontzal.servlets.modelos;
 
 public class EntidadesException extends RuntimeException {
 
