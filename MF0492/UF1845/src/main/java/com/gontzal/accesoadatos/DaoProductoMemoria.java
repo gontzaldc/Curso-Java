@@ -11,9 +11,9 @@ public class DaoProductoMemoria implements DaoProducto {
 	private static final TreeMap<Long, Producto> productos = new TreeMap<>();
 
 	static {
-		productos.put(1L, new Producto(1L, "Crema de Cacahuete", new BigInteger("12"), "adsfgh dassADSF"));
-		productos.put(2L, new Producto(2L, "Crema de Verdura", new BigInteger("12"), "adsfgh dassADSF"));
-		productos.put(3L, new Producto(3L, "Chocolate", new BigInteger("12"), "adsfgh dassADSF"));
+		productos.put(1L, new Producto(1L, "Crema de Cacahuete", new BigInteger("12"), "adsfgh dassADSF",false));
+		productos.put(2L, new Producto(2L, "Crema de Verdura", new BigInteger("12"), "adsfgh dassADSF",true));
+		productos.put(3L, new Producto(3L, "Chocolate", new BigInteger("12"), "adsfgh dassADSF",true));
 	}
 
 	// SINGLETON

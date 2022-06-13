@@ -9,6 +9,24 @@ public class Producto {
 	private String nombre;
 	private BigInteger stock;
 	private String descripcion;
+	private Boolean vendiendo;
+
+	public Producto(Long id, String nombre, BigInteger stock, String descripcion, Boolean vendiendo) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.stock = stock;
+		this.descripcion = descripcion;
+		this.vendiendo = vendiendo;
+	}
+
+	public Boolean getVendiendo() {
+		return vendiendo;
+	}
+
+	public void setVendiendo(Boolean vendiendo) {
+		this.vendiendo = vendiendo;
+	}
 
 	public Producto(Long id, String nombre, BigInteger stock, String descripcion) {
 		setId(id);
@@ -68,7 +86,7 @@ public class Producto {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(descripcion, id, nombre, stock);
+		return Objects.hash(descripcion, id, nombre, stock, vendiendo);
 	}
 
 	@Override
@@ -81,12 +99,14 @@ public class Producto {
 			return false;
 		Producto other = (Producto) obj;
 		return Objects.equals(descripcion, other.descripcion) && Objects.equals(id, other.id)
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(stock, other.stock);
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(stock, other.stock)
+				&& Objects.equals(vendiendo, other.vendiendo);
 	}
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", stock=" + stock + ", descripcion=" + descripcion + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", stock=" + stock + ", descripcion=" + descripcion
+				+ ", vendiendo=" + vendiendo + "]";
 	}
 
 }
