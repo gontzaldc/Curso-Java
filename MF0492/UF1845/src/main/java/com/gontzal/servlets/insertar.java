@@ -1,6 +1,7 @@
 package com.gontzal.servlets;
 
 import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
 import java.math.BigInteger;
 
 import com.gontzal.accesoadatos.DaoProducto;
@@ -43,8 +44,7 @@ public class insertar extends HttpServlet {
 		
 		DAO.insertar(p);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("mostrar");
-		rd.forward(request,response);
+		response.sendRedirect("admin");
 	}
 
 	

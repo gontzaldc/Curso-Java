@@ -27,9 +27,12 @@ public class AdminModificarServlet extends HttpServlet {
 
 		String id = request.getParameter("id");
 
-		request.setAttribute("producto", DAO.obtenerPorId(Long.parseLong(id)));
-		request.getRequestDispatcher("/WEB-INF/vistas/adminedit.jsp").forward(request, response);
+		if (id != null) {
+			request.setAttribute("producto", DAO.obtenerPorId(Long.parseLong(id)));
+			request.getRequestDispatcher("/WEB-INF/vistas/adminedit.jsp").forward(request, response);
+		}
 		
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -41,22 +44,20 @@ public class AdminModificarServlet extends HttpServlet {
 		String stock = request.getParameter("stock");
 		String descripcion = request.getParameter("descripcion");
 		String vendiendo = request.getParameter("vendiendo");
-		
+
 		p.setId(Long.parseLong(id));
 		p.setNombre(nombre);
 		p.setStock(new BigInteger(stock));
 		p.setDescripcion(descripcion);
-		if(vendiendo==null) {
-			vendiendo="False";
-		}
-		else {
-			vendiendo="True";
+		if (vendiendo == null) {
+			vendiendo = "False";
+		} else {
+			vendiendo = "True";
 		}
 		p.setVendiendo(Boolean.parseBoolean(vendiendo));
 		DAO.modificar(p);
-		
-		request.setAttribute("productos", DAO.obtenerTodos());
-		request.getRequestDispatcher("/WEB-INF/vistas/admin.jsp").forward(request, response);
+
+		response.sendRedirect("admin");
 	}
 
 }
