@@ -21,7 +21,7 @@ public class UsuariosServlet extends HttpServlet {
 		// Empaqueta datos para la siguiente vista
 		request.setAttribute("usuarios", DAO.obtenerTodos());
 		// Redirecciona a la siguiente vista
-		request.getRequestDispatcher("/WEB-INF/vistas/usuarios-.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/vistas/usuarios.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
