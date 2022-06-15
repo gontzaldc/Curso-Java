@@ -21,16 +21,40 @@ public class UsuarioServlet extends HttpServlet {
 		String id= request.getParameter("id");
 		String ver= request.getParameter("ver");
 		
-		if(id!=null && Boolean.parseBoolean(ver)==true) {
+		if(id!=null&& Boolean.parseBoolean(ver)) {
 			Usuario usuario= DAO.obtenerPorId(Long.parseLong(id));
 			request.setAttribute("usuario", usuario);
+			request.getRequestDispatcher("/WEB-INF/vistas/usuario.jsp").forward(request, response);
+		}else {
+			if(id!=null) {
+			Usuario usuario= DAO.obtenerPorId(Long.parseLong(id));
+			request.setAttribute("usuario", usuario);
+			
+			}
+			request.getRequestDispatcher("/WEB-INF/vistas/formulario.jsp").forward(request, response);
 		}
 		
-		request.getRequestDispatcher("/WEB-INF/vistas/usuario.jsp").forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+
+		String id = request.getParameter("id");
+		String nombre = request.getParameter("nombre");
+		String email= request.getParameter("email");
+		String contra = request.getParameter("contra");
+		
+		
+		Usuario usuario= new Usuario(null,nombre,email, contra);
+		if(id==null || id.trim().length()==0) {
+			DAO.insertar(usuario);
+		}
+		else {
+			usuario.setId(Long.parseLong(id));
+			DAO.modificar(usuario);
+		}
+		
+		response.sendRedirect(request.getContextPath() + "/usuarios");
 	}
 
 }
