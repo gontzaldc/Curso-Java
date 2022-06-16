@@ -1,18 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
-<title>Usuarios</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+<%@ include file="/WEB-INF/vistas/includes/cabecera.jsp"%>
 
 	<table class="table table-striped table-hover">
 		<thead>
@@ -20,7 +9,7 @@
 				<th>ID</th>
 				<th>Nombre</th>
 				<th>Email</th>
-				<th>Contraseña</th>
+				<th>ContraseÃ±a</th>
 				<th>Opciones</th>
 			</tr>
 		</thead>
@@ -48,10 +37,9 @@
 		<td></td>
 		<td></td>
 		<td></td>
-		<td><a class="btn btn-success btn-sm" href="usuario">Añadir</a></td>
+		<td><a class="btn btn-success btn-sm" href="usuario">AÃ±adir</a></td>
 		</tr>
 		</tfoot>
 	</table>
 
-</body>
-</html>
+<%@ include file="/WEB-INF/vistas/includes/pie.jsp"%>
