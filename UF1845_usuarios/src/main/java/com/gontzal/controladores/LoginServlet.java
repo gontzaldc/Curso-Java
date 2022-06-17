@@ -2,7 +2,6 @@ package com.gontzal.controladores;
 
 import java.io.IOException;
 
-import com.gontzal.dal.DaoUsuarioMemoria;
 import com.gontzal.modelos.Usuario;
 
 import jakarta.servlet.ServletException;
@@ -15,7 +14,6 @@ import jakarta.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 	private static final String LOGIN_JSP = "/WEB-INF/vistas/login.jsp";
 	private static final long serialVersionUID = 1L;
-	private static final DaoUsuarioMemoria DAO = DaoUsuarioMemoria.getInstancia();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -50,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 
 	private Usuario validarUsuario(Usuario usuario) {
 		
-		Usuario usuarioEncontrado=DAO.BuscarPorEmail(usuario.getEmail());
+		Usuario usuarioEncontrado=Globales.DAO.BuscarPorEmail(usuario.getEmail());
 		
 		if(usuarioEncontrado!=null && usuario.getcontrasena().equals(usuarioEncontrado.getcontrasena())) {
 			return usuarioEncontrado;
