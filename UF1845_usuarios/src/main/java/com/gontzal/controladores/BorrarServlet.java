@@ -20,7 +20,7 @@ public class BorrarServlet extends HttpServlet {
 		
 		Globales.DAO.borrar(Long.parseLong(id));
 		
-		response.sendRedirect(request.getContextPath() + "/usuarios");
+		response.sendRedirect(request.getContextPath() + "/admin/usuarios");
 
 	}
 

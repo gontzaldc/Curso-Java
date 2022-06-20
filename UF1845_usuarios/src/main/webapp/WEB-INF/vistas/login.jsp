@@ -22,7 +22,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
         
-            <img alt="imagen login" src="${pageContext.servletContext.contextPath}/imgs/llaveLogin.svg">
+            <img alt="imagen login" src="imgs/llaveLogin.svg">
           <h2 class="fw-bold mb-5">Iniciar sesión</h2>
           <form action="login" method="post">
             <!-- 2 column grid layout with text inputs for the first and last names -->

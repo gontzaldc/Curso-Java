@@ -52,7 +52,7 @@ public class UsuarioServlet extends HttpServlet {
 			Globales.DAO.modificar(usuario);
 		}
 		
-		response.sendRedirect(request.getContextPath() + "/usuarios");
+		response.sendRedirect(request.getContextPath() + "/admin/usuarios");
 	}
 
 }

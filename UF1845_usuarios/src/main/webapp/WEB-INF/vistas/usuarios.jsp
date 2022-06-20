@@ -16,14 +16,14 @@
 		<tbody>
 			
 			<c:forEach items="${usuarios}" var="usuario">
-				<a><tr onclick="window.location.href='usuario?id=${usuario.id}&ver=True';">
+				<a><tr onclick="window.location.href='admin/usuario?id=${usuario.id}&ver=True';">
 				
 				<th >${usuario.id}</th>
 				<td>${usuario.nombre}</td>
 				<td>${usuario.email}</td>
 				<td>${usuario.contrasena}</td>
-				<td><a class="btn btn-info btn-sm" href="usuario?id=${usuario.id}">Modificar</a>
-				<a class="btn btn-danger btn-sm" href="borrar?id=${usuario.id}">Borrar</a>
+				<td><a class="btn btn-info btn-sm" href="admin/usuario?id=${usuario.id}">Modificar</a>
+				<a class="btn btn-danger btn-sm" href="admin/borrar?id=${usuario.id}">Borrar</a>
 				</td>
 				
 				</tr>
@@ -37,7 +37,7 @@
 		<td></td>
 		<td></td>
 		<td></td>
-		<td><a class="btn btn-success btn-sm" href="usuario">Añadir</a></td>
+		<td><a class="btn btn-success btn-sm" href="admin/usuario">Añadir</a></td>
 		</tr>
 		</tfoot>
 	</table>

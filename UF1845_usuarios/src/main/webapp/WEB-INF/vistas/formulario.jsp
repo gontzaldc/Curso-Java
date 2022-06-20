@@ -3,7 +3,7 @@
 <%@ include file="/WEB-INF/vistas/includes/cabecera.jsp"%>
 
 	<h1>Añadir Usuario</h1>
-	<form action="usuario" method="post">
+	<form action="admin/usuario" method="post">
 		<c:if test="${usuario.id!=null}">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="id" name="id" value="${usuario.id}" readonly> <label
