@@ -3,12 +3,14 @@ package com.gontzal.dal;
 public class DaoFabrica {
 
 	private DaoUsuario daoUsuario;
+	private DaoProducto daoProducto;
 
 	public DaoFabrica(String tipoDao) {
 
 		switch (tipoDao) {
 		case "memoria": {
 			daoUsuario = DaoUsuarioMemoria.getInstancia();
+			daoProducto = DaoProductoMemoria.getInstantia();
 			break;
 
 		}
@@ -20,5 +22,10 @@ public class DaoFabrica {
 	public DaoUsuario getDaoUsuario() {
 		return daoUsuario;
 	}
+	
+	public DaoProducto getDaoProducto() {
+		return daoProducto;
+	}
+
 
 }

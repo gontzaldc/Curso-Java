@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 import com.gontzal.modelos.Usuario;
 
-class DaoUsuarioMemoria implements DaoUsuario {
+ class DaoUsuarioMemoria implements DaoUsuario {
 
 	private static final TreeMap<Long, Usuario> usuarios = new TreeMap<>();
 
