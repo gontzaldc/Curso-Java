@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 			
 		}
 		else {
-			request.setAttribute("error", "Email o contraseña incorrectos");
+			request.setAttribute("textoAlertaLogin", "Email o contraseña incorrectos");
 			request.setAttribute("usuario", usuario);
 			request.getRequestDispatcher(LOGIN_JSP).forward(request, response);
 		}

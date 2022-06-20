@@ -24,6 +24,13 @@
         
             <img alt="imagen login" src="imgs/llaveLogin.svg">
           <h2 class="fw-bold mb-5">Iniciar sesión</h2>
+          <c:if test="${textoAlertaLogin!=null}">
+		<div class="alert alert-danger alert-dismissible fade show"
+		role="alert">
+		${textoAlertaLogin}
+		<button type="button" class="btn-close" data-bs-dismiss="alert"
+			aria-label="Close"></button>
+	</div></c:if>
           <form action="login" method="post">
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row">
@@ -40,7 +47,6 @@
                 </div>
               </div>
               
-                 <span class="text-danger">${error}</span>
             </div>
 
         
