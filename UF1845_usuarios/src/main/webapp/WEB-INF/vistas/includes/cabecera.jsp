@@ -37,18 +37,26 @@
 							href="admin/usuarios">Administración</a></li>
 					</c:if>
 				</ul>
-				
+
 			</div>
 			<span class="navbar-text"> ${sessionScope.usuario.email} </span>
-				<ul class="navbar-nav mb-2 mb-lg-0">
-					<c:choose>
-						<c:when test="${sessionScope.usuario == null}">
-							<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-						</c:otherwise>
-					</c:choose>
-				</ul>
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<c:choose>
+					<c:when test="${sessionScope.usuario == null}">
+						<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
 		</div>
 	</nav>
+
+	<c:if test="${textoAlerta!=null}">
+		<div class="alert alert-${nivelAlerta} alert-dismissible fade show"
+		role="alert">
+		${textoAlerta}
+		<button type="button" class="btn-close" data-bs-dismiss="alert"
+			aria-label="Close"></button>
+	</div></c:if>

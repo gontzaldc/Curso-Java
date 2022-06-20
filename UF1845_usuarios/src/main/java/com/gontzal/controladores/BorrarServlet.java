@@ -20,7 +20,9 @@ public class BorrarServlet extends HttpServlet {
 		
 		Globales.DAO.borrar(Long.parseLong(id));
 		
-		response.sendRedirect(request.getContextPath() + "/admin/usuarios");
+		request.setAttribute("textoAlerta", "El Usuario con id: "+ id+" se ha borrado correctamente.");
+		request.setAttribute("nivelAlerta", "success");
+		request.getRequestDispatcher("/admin/usuarios").forward(request, response);
 
 	}
 
