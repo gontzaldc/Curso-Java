@@ -17,9 +17,9 @@ class DaoProductoMemoria implements DaoProducto {
 	private DaoProductoMemoria() {
 
 	}
-	
+
 	private static final DaoProductoMemoria INSTANCIA = new DaoProductoMemoria();
-	
+
 	public static DaoProductoMemoria getInstantia() {
 		return INSTANCIA;
 	}
@@ -29,9 +29,5 @@ class DaoProductoMemoria implements DaoProducto {
 	public Iterable<Producto> obtenerTodos() {
 		return productos.values();
 	}
-
-
-	
-	
 
 }

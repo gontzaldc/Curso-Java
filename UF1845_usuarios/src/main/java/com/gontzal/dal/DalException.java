@@ -2,9 +2,8 @@ package com.gontzal.dal;
 
 public class DalException extends RuntimeException {
 
-
 	private static final long serialVersionUID = 1L;
-	
+
 	public DalException() {
 		super();
 	}
@@ -24,6 +23,5 @@ public class DalException extends RuntimeException {
 	public DalException(Throwable cause) {
 		super(cause);
 	}
-
 
 }

@@ -1,7 +1,7 @@
 package com.gontzal.dal;
 
 public interface Dao<T> {
-	
+
 	default Iterable<T> obtenerTodos() {
 		throw new DalException("NO IMPLEMENTADO");
 	}
@@ -21,5 +21,5 @@ public interface Dao<T> {
 	default void borrar(Long id) {
 		throw new DalException("NO IMPLEMENTADO");
 	}
-	
+
 }

@@ -16,7 +16,7 @@ public class Usuario {
 		setEmail(email);
 		setcontrasena(contrasena);
 	}
-	
+
 	public Usuario() {
 	}
 

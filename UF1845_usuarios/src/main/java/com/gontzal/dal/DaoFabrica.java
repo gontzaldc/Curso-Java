@@ -22,10 +22,9 @@ public class DaoFabrica {
 	public DaoUsuario getDaoUsuario() {
 		return daoUsuario;
 	}
-	
+
 	public DaoProducto getDaoProducto() {
 		return daoProducto;
 	}
-
 
 }

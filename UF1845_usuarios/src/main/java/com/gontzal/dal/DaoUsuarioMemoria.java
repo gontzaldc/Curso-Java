@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 import com.gontzal.modelos.Usuario;
 
- class DaoUsuarioMemoria implements DaoUsuario {
+class DaoUsuarioMemoria implements DaoUsuario {
 
 	private static final TreeMap<Long, Usuario> usuarios = new TreeMap<>();
 
@@ -53,7 +53,6 @@ import com.gontzal.modelos.Usuario;
 	@Override
 	public Usuario BuscarPorEmail(String email) {
 
-
 //		for (Usuario u : usuarios.values()) {
 //			if (u.getEmail().equals(email)) {
 //				return u;
@@ -61,9 +60,9 @@ import com.gontzal.modelos.Usuario;
 //
 //		}
 //		return null;
-		
-		//más optimo
-		return usuarios.values().parallelStream().filter(u->u.getEmail().equals(email)).findFirst().orElse(null);
+
+		// más optimo
+		return usuarios.values().parallelStream().filter(u -> u.getEmail().equals(email)).findFirst().orElse(null);
 
 	}
 

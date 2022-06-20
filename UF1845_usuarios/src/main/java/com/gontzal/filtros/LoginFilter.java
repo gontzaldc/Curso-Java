@@ -14,27 +14,26 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-
 @WebFilter("/admin/*")
 public class LoginFilter extends HttpFilter {
-       
+
 	private static final long serialVersionUID = 1L;
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
-		
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		HttpSession session = httpRequest.getSession();
-		
+
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 
 		if (usuario == null) {
-			httpRequest.setAttribute("textoAlertaLogin", "Debes estar logueado para acceder a la parte de administración");
+			httpRequest.setAttribute("textoAlertaLogin",
+					"Debes estar logueado para acceder a la parte de administración");
 			httpRequest.getRequestDispatcher("/login").forward(httpRequest, httpResponse);
 			return;
 		}
 		chain.doFilter(request, response);
 	}
 }
-
