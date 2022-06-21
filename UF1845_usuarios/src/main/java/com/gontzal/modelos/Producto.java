@@ -1,5 +1,6 @@
 package com.gontzal.modelos;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Producto {
@@ -8,17 +9,47 @@ public class Producto {
 	private String nombre;
 	private String descripcion;
 	private Integer stock;
+	private String categoria;
+	private Integer descuento;
+	private BigDecimal precio;
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public Integer getDescuento() {
+		return descuento;
+	}
+
+	public void setDescuento(Integer descuento) {
+		this.descuento = descuento;
+	}
 
 	public Producto() {
 
 	}
 
-	public Producto(Long id, String nombre, String descripcion, Integer stock) {
+	public Producto(Long id, String nombre, String descripcion, Integer stock,String categoria, Integer descuento,BigDecimal precio) {
 
 		setId(id);
 		setNombre(nombre);
 		setDescripcion(descripcion);
 		setStock(stock);
+		setCategoria(categoria);
+		setDescuento(descuento);
+		setPrecio(precio);
+	}
+
+	public BigDecimal getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(BigDecimal precio) {
+		this.precio = precio;
 	}
 
 	public Long getId() {
@@ -55,7 +86,7 @@ public class Producto {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(descripcion, id, nombre, stock);
+		return Objects.hash(categoria, descripcion, descuento, id, nombre, precio, stock);
 	}
 
 	@Override
@@ -67,13 +98,16 @@ public class Producto {
 		if (getClass() != obj.getClass())
 			return false;
 		Producto other = (Producto) obj;
-		return Objects.equals(descripcion, other.descripcion) && Objects.equals(id, other.id)
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(stock, other.stock);
+		return Objects.equals(categoria, other.categoria) && Objects.equals(descripcion, other.descripcion)
+				&& Objects.equals(descuento, other.descuento) && Objects.equals(id, other.id)
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(precio, other.precio)
+				&& Objects.equals(stock, other.stock);
 	}
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", stock=" + stock + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", stock=" + stock
+				+ ", categoria=" + categoria + ", descuento=" + descuento + ", precio=" + precio + "]";
 	}
 
 }
