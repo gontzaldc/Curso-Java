@@ -10,7 +10,7 @@ public class DaoFabrica {
 		switch (tipoDao) {
 		case "memoria": {
 			daoUsuario = DaoUsuarioMemoria.getInstancia();
-			daoProducto = DaoProductoMemoria.getInstantia();
+			daoProducto = new DaoProductoMemoria();
 			break;
 
 		}
