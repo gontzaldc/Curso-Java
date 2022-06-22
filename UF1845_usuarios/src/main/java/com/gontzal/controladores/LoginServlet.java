@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		Usuario usuario = new Usuario(null, null, email, password);
+		Usuario usuario = new Usuario(null, null, email, password,null);
 
 		Usuario usuarioValido = validarUsuario(usuario);
 

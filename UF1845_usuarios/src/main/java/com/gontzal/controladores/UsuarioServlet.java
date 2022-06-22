@@ -43,7 +43,7 @@ public class UsuarioServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String contra = request.getParameter("contra");
 
-		Usuario usuario = new Usuario(null, nombre, email, contra);
+		Usuario usuario = new Usuario(null, nombre, email, contra,null);
 		if (id == null || id.trim().length() == 0) {
 			Globales.DAO.insertar(usuario);
 		} else {
