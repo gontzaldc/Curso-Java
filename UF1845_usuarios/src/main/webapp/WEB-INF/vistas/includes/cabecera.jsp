@@ -27,7 +27,7 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="#">Home</a></li>
-					<c:if test="${sessionScope.usuario != null}">
+					<c:if test="${sessionScope.usuario.rol == 'ADMIN'}">
 						<li class="nav-item"><a class="nav-link"
 							href="admin/usuarios">Administración</a></li>
 					</c:if>
@@ -73,3 +73,4 @@
 				aria-label="Close"></button>
 		</div>
 	</c:if>
+	

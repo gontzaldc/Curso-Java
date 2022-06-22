@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Usuario {
 
-	private enum Roles {ADMIN,USUARIO};
+	public enum Roles {ADMIN,USUARIO};
 	private Long id;
 	private String nombre;
 	private String email;

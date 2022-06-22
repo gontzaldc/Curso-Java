@@ -3,6 +3,7 @@ package com.gontzal.controladores;
 import java.io.IOException;
 
 import com.gontzal.modelos.Usuario;
+import com.gontzal.modelos.Usuario.Roles;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -43,7 +44,7 @@ public class UsuarioServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String contra = request.getParameter("contra");
 
-		Usuario usuario = new Usuario(null, nombre, email, contra,null);
+		Usuario usuario = new Usuario(null, nombre, email, contra,Roles.USUARIO);
 		if (id == null || id.trim().length() == 0) {
 			Globales.DAO.insertar(usuario);
 		} else {
