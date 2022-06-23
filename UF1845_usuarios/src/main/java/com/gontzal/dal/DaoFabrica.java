@@ -4,6 +4,8 @@ public class DaoFabrica {
 
 	private DaoUsuario daoUsuario;
 	private DaoProducto daoProducto;
+	private DaoLibro daoLibro;
+	private DaoReserva daoReserva;
 
 	public DaoFabrica(String tipoDao) {
 
@@ -11,6 +13,8 @@ public class DaoFabrica {
 		case "memoria": {
 			daoUsuario = DaoUsuarioMemoria.getInstancia();
 			daoProducto = new DaoProductoMemoria();
+			daoLibro= new DaoLibroMemoria();
+			daoReserva= new DaoReservaMemoria();
 			break;
 
 		}
@@ -25,6 +29,14 @@ public class DaoFabrica {
 
 	public DaoProducto getDaoProducto() {
 		return daoProducto;
+	}
+	
+	public DaoLibro getDaoLibro() {
+		return daoLibro;
+	}
+	
+	public DaoReserva getDaoReserva() {
+		return daoReserva;
 	}
 
 }
