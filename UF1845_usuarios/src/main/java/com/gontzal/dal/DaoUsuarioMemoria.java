@@ -15,7 +15,7 @@ class DaoUsuarioMemoria implements DaoUsuario {
 		
 		//TODO Poner roles a los usuarios estaticos
 		usuarios.put(1L, new Usuario(1L, "gontzal", "gontzal@gdasda.sad", "12345",Roles.ADMIN));
-		usuarios.put(2L, new Usuario(2L, "usuario2", "usuario2@gdasda.sad", "2222222",Roles.USUARIO));
+		usuarios.put(2L, new Usuario(2L, "usuario2", "usuario2@gdasda.sad", "1234",Roles.USUARIO));
 		usuarios.put(3L, new Usuario(3L, "usuario3", "usuario3@gdasda.sad", "3333333",Roles.USUARIO));
 	}
 

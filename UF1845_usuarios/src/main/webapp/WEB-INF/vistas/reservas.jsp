@@ -19,7 +19,7 @@
 			<tr>
 				<th scope="row">${r.id}</th>
 				<td>${r.libro.nombre}</td>
-				<td></td>
+				<td>${r.email}</td>
 				<td>${r.fecha}</td>
 
 

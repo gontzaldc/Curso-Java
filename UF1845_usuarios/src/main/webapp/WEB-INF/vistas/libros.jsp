@@ -20,7 +20,7 @@
 				<td>${l.nombre}</td>
 				<td>${l.categoria}</td>
 				<c:if test="${sessionScope.usuario!=null}">
-				<td><a class="btn btn-info btn-sm"href="libros/hacer-reserva?idLibro=${l.id}&idUsuario=1">Reservar</a></td>
+				<td><a class="btn btn-info btn-sm"href="libros/hacer-reserva?idLibro=${l.id}&email=${sessionScope.usuario.email}">Reservar</a></td>
 				</c:if>
 			</tr>
 			

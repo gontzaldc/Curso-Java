@@ -17,13 +17,13 @@ public class HacerReservaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String idUsuario= request.getParameter("idUsuario");
+		String email= request.getParameter("email");
 		String idLibro= request.getParameter("idLibro");
 		
 		LocalDateTime fecha= LocalDateTime.now();
 		
 		Libro libro= Globales.DAOLIBRO.buscarPorId(Long.parseLong(idLibro));
-		Globales.DAORESERVA.insertar(new Reserva(null,fecha,Long.parseLong(idUsuario),libro));
+		Globales.DAORESERVA.insertar(new Reserva(null,fecha,email,libro));
 		
 		response.sendRedirect(request.getContextPath() +"/libros");
 	}

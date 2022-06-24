@@ -7,17 +7,17 @@ public class Reserva {
 
 	private Long id;
 	private LocalDateTime fecha;
-	private Long idUsuario;
+	private String email;
 	private Libro libro;
 
 
 	public Reserva() {
 		
 	}
-	public Reserva(Long id, LocalDateTime fecha, Long idUsuario, Libro libro) {
+	public Reserva(Long id, LocalDateTime fecha, String email, Libro libro) {
 		setId(id);
 		setLibro(libro);
-		setIdUsuario(idUsuario);
+		setemail(email);
 		setFecha(fecha);
 	}
 	
@@ -38,12 +38,12 @@ public class Reserva {
 		this.fecha = fecha;
 	}
 
-	public Long getIdUsuario() {
-		return idUsuario;
+	public String getemail() {
+		return email;
 	}
 
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setemail(String email) {
+		this.email = email;
 	}
 
 	public Libro getLibro() {
@@ -55,7 +55,7 @@ public class Reserva {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(fecha, id, idUsuario, libro);
+		return Objects.hash(email, fecha, id, libro);
 	}
 
 	@Override
@@ -67,13 +67,13 @@ public class Reserva {
 		if (getClass() != obj.getClass())
 			return false;
 		Reserva other = (Reserva) obj;
-		return Objects.equals(fecha, other.fecha) && Objects.equals(id, other.id)
-				&& Objects.equals(idUsuario, other.idUsuario) && Objects.equals(libro, other.libro);
+		return Objects.equals(email, other.email) && Objects.equals(fecha, other.fecha) && Objects.equals(id, other.id)
+				&& Objects.equals(libro, other.libro);
 	}
 
 	@Override
 	public String toString() {
-		return "Reserva [id=" + id + ", fecha=" + fecha + ", idUsuario=" + idUsuario + ", libro=" + libro + "]";
+		return "Reserva [id=" + id + ", fecha=" + fecha + ", email=" + email + ", libro=" + libro + "]";
 	}
 
 }

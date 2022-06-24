@@ -31,6 +31,10 @@
 						<li class="nav-item"><a class="nav-link"
 							href="admin/usuarios">Administración</a></li>
 					</c:if>
+					<c:if test="${sessionScope.usuario != null}">
+						<li class="nav-item"><a class="nav-link"
+							href="libros/reservas">Mis libros</a></li>
+					</c:if>
 				</ul>
 
 			</div>
@@ -73,4 +77,3 @@
 				aria-label="Close"></button>
 		</div>
 	</c:if>
-	
