@@ -32,8 +32,7 @@
 							href="admin/usuarios">Administración</a></li>
 					</c:if>
 					<c:if test="${sessionScope.usuario != null}">
-						<li class="nav-item"><a class="nav-link"
-							href="libros/reservas">Mis libros</a></li>
+						<li class="nav-item"><a class="nav-link" href="libros">libros</a></li>
 					</c:if>
 				</ul>
 
@@ -52,9 +51,9 @@
 							</span>
 						</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-								<li><a class="dropdown-item" href="logout">Logout <i
-										class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+								<li ><a class="dropdown-item" href="libros/reservas"><i class="fa-solid fa-book"></i>  Mis libros</a></li>
+								<li><a class="dropdown-item" href="logout"><i
+										class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a></li>
 
 							</ul></li>
 					</c:when>

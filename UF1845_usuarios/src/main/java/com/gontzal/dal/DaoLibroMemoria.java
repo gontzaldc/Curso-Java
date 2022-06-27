@@ -9,8 +9,13 @@ public class DaoLibroMemoria implements DaoLibro{
 	private final static TreeMap<Long,Libro> libros= new TreeMap<>();
 	
 	static {
-		libros.put(1L, new Libro(1L,"Libro 1","drama"));
-		libros.put(2L, new Libro(2L,"Libro 2","aventura"));
+		libros.put(1L, new Libro(1L,"Libro 1","drama",true));
+		libros.put(2L, new Libro(2L,"Libro 2","aventura",true));
+	}
+
+	@Override
+	public Libro modificar(Libro libro) {
+		return libros.put(libro.getId(), libro);
 	}
 
 	@Override

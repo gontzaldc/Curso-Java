@@ -7,11 +7,13 @@ public class Libro {
 	private Long id;
 	private String nombre;
 	private String categoria;
+	private Boolean disponible;
 
-	public Libro(Long id, String nombre, String categoria) {
+	public Libro(Long id, String nombre, String categoria, Boolean disponible) {
 		setId(id);
 		setNombre(nombre);
 		setCategoria(categoria);
+		setDisponible(disponible);
 	}
 
 	public Long getId() {
@@ -40,7 +42,7 @@ public class Libro {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(categoria, id, nombre);
+		return Objects.hash(categoria, disponible, id, nombre);
 	}
 
 	@Override
@@ -52,12 +54,21 @@ public class Libro {
 		if (getClass() != obj.getClass())
 			return false;
 		Libro other = (Libro) obj;
-		return Objects.equals(categoria, other.categoria) && Objects.equals(id, other.id)
-				&& Objects.equals(nombre, other.nombre);
+		return Objects.equals(categoria, other.categoria) && Objects.equals(disponible, other.disponible)
+				&& Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre);
 	}
 
 	@Override
 	public String toString() {
-		return "Libros [id=" + id + ", nombre=" + nombre + ", categoria=" + categoria + "]";
+		return "Libro [id=" + id + ", nombre=" + nombre + ", categoria=" + categoria + ", disponible=" + disponible
+				+ "]";
+	}
+
+	public Boolean getDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(Boolean disponible) {
+		this.disponible = disponible;
 	}
 }

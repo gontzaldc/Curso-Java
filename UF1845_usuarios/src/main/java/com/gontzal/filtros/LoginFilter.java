@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter("/admin/*")
+@WebFilter(urlPatterns = {"/admin/*", "/libros/reservas"})
 public class LoginFilter extends HttpFilter {
 
 	private static final long serialVersionUID = 1L;

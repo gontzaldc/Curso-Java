@@ -34,4 +34,11 @@ public class DaoReservaMemoria implements DaoReserva {
 		return res;
 	}
 
+	@Override
+	public void borrar(Long id) {
+		reservas.remove(id);
+	}
+	
+	
+
 }

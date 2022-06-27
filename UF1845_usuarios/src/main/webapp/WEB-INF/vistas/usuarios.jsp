@@ -3,6 +3,7 @@
 	
 <%@ include file="/WEB-INF/vistas/includes/cabecera.jsp"%>
 
+
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>

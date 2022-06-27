@@ -9,7 +9,7 @@
 			<th scope="col">Libro</th>
 			<th scope="col">Usuario</th>
 			<th scope="col">Fecha Reservado</th>
-			<th scope="col">Fecha Devolución</th>
+			<th scope="col">Opciones</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +21,7 @@
 				<td>${r.libro.nombre}</td>
 				<td>${r.email}</td>
 				<td>${r.fecha}</td>
+				<td><a class="btn btn-sm btn-primary" href="libros/devolver?id=${r.id}&idL=${r.libro.id}">Devolver</a></td>
 
 
 			</tr>

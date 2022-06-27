@@ -2,7 +2,9 @@ package com.gontzal.controladores;
 
 import java.io.IOException;
 
+import com.gontzal.modelos.Reserva;
 import com.gontzal.modelos.Usuario;
+import com.gontzal.modelos.Usuario.Roles;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,16 +24,14 @@ public class ReservasServlet extends HttpServlet {
 		HttpSession session = httpRequest.getSession();
 
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
-		
-		if(!usuario.getRol().equals("ADMIN")) {
-			request.setAttribute("reservas", Globales.DAORESERVA.obtenerPorEmail(usuario.getEmail()));
-			request.getRequestDispatcher("/WEB-INF/vistas/reservas.jsp").forward(request, response);
-			return;
-		}
-			
-		
 
-		request.setAttribute("reservas", Globales.DAORESERVA.obtenerTodos());
+		Iterable<Reserva> obtener = Globales.DAORESERVA.obtenerPorEmail(usuario.getEmail());
+		
+		if(usuario.getRol().equals(Roles.ADMIN)) {
+			obtener= Globales.DAORESERVA.obtenerTodos();
+		}
+		
+		request.setAttribute("reservas", obtener);
 		request.getRequestDispatcher("/WEB-INF/vistas/reservas.jsp").forward(request, response);
 			
 		
