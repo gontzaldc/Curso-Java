@@ -16,7 +16,7 @@ public class AdminServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setAttribute("usuarios", Globales.DAO.obtenerTodos());
-		
+		request.setAttribute("libros", Globales.DAOLIBRO.obtenerTodos());
 		request.getRequestDispatcher("/WEB-INF/vistas/administracion.jsp").forward(request, response);
 	}
 

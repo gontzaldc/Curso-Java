@@ -11,6 +11,14 @@
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <script src="JS/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="CSS/all.min.css">
+<link rel="stylesheet" href="CSS/datatables.min.css">
+<script src="JS/datatables.min.js"></script>
+
+<script>
+	$(function() {
+		$('table').DataTable();
+	});
+</script>
 </head>
 <body>
 
@@ -51,9 +59,11 @@
 							</span>
 						</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li ><a class="dropdown-item" href="libros/reservas"><i class="fa-solid fa-book"></i>  Mis libros</a></li>
+								<li><a class="dropdown-item" href="libros/reservas"><i
+										class="fa-solid fa-book"></i> Mis libros</a></li>
 								<li><a class="dropdown-item" href="logout"><i
-										class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a></li>
+										class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar
+										sesión</a></li>
 
 							</ul></li>
 					</c:when>
@@ -76,3 +86,4 @@
 				aria-label="Close"></button>
 		</div>
 	</c:if>
+	<main>

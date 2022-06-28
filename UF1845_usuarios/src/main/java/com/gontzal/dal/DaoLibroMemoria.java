@@ -5,7 +5,8 @@ import java.util.TreeMap;
 import com.gontzal.modelos.Libro;
 
 public class DaoLibroMemoria implements DaoLibro{
-	
+
+
 	private final static TreeMap<Long,Libro> libros= new TreeMap<>();
 	
 	static {
@@ -28,6 +29,13 @@ public class DaoLibroMemoria implements DaoLibro{
 		return libros.get(id);
 	}
 	
+	
+	@Override
+	public Libro insertar(Libro libro) {
+		Long id = libros.size()>0?libros.lastKey()+1:1L;
+		libro.setId(id);
+		return libros.put(id, libro);
+	}
 	
 
 }

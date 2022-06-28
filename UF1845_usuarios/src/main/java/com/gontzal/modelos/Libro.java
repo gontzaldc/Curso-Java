@@ -1,5 +1,7 @@
 package com.gontzal.modelos;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Libro {
@@ -8,6 +10,10 @@ public class Libro {
 	private String nombre;
 	private String categoria;
 	private Boolean disponible;
+
+	private Map<String, String> errores = new HashMap<>();
+	
+
 
 	public Libro(Long id, String nombre, String categoria, Boolean disponible) {
 		setId(id);
@@ -29,7 +35,14 @@ public class Libro {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if (nombre == null ) {
+			throw new ModelosException("No he recibido el email");
+		}
+		if (nombre.trim().length() < 3) {
+			errores.put("nombre", "El nombre debe tener 3 o más caracteres");
+		}
+
+		this.nombre = nombre.trim();
 	}
 
 	public String getCategoria() {
@@ -39,6 +52,11 @@ public class Libro {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	
+	public Map<String, String> getErrores() {
+		return errores;
+	}
+
 
 	@Override
 	public int hashCode() {

@@ -3,7 +3,6 @@
 	
 <%@ include file="/WEB-INF/vistas/includes/cabecera.jsp"%>
 
-
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
@@ -43,4 +42,5 @@
 		</tfoot>
 	</table>
 
+<p>asdasdsa</p>
 <%@ include file="/WEB-INF/vistas/includes/pie.jsp"%>
