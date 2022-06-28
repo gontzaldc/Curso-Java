@@ -1,5 +1,9 @@
 package com.gontzal.controladores;
 
+import java.io.IOException;
+import java.util.Properties;
+
+import com.gontzal.dal.DalException;
 import com.gontzal.dal.DaoFabrica;
 import com.gontzal.dal.DaoLibro;
 import com.gontzal.dal.DaoProducto;
@@ -7,9 +11,31 @@ import com.gontzal.dal.DaoReserva;
 import com.gontzal.dal.DaoUsuario;
 
 public class Globales {
-	static final DaoUsuario DAO = new DaoFabrica("memoria").getDaoUsuario();
-	static final DaoProducto DAOPRODUCTO = new DaoFabrica("memoria").getDaoProducto();
-	static final DaoLibro DAOLIBRO = new DaoFabrica("memoria").getDaoLibro();
-	static final DaoReserva DAORESERVA = new DaoFabrica("memoria").getDaoReserva();
+	static final DaoUsuario DAO;
+	static final DaoProducto DAOPRODUCTO;
+	static final DaoLibro DAOLIBRO;
+	static final DaoReserva DAORESERVA;
+	
+	static final String CONFIGURACION = "config.properties";
+	
+	static {
+
+		try {
+			Properties props = new Properties();
+			props.load(Globales.class.getClassLoader().getResourceAsStream(CONFIGURACION));
+
+			String tipo = props.getProperty("dal.tipodao");
+
+			DaoFabrica fabrica = new DaoFabrica(tipo);
+			DAO = fabrica.getDaoUsuario();
+			DAOPRODUCTO = fabrica.getDaoProducto();
+			DAOLIBRO = fabrica.getDaoLibro();
+			DAORESERVA = fabrica.getDaoReserva();
+
+		} catch (IOException e) {
+			throw new DalException("No se ha podido obtener la configuración");
+		}
+
+	}
 
 }
