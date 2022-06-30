@@ -4,5 +4,8 @@ import com.gontzal.modelos.Usuario;
 
 public interface DaoUsuario extends Dao<Usuario> {
 
-	Usuario BuscarPorEmail(String email);
+	default Usuario BuscarPorEmail(String email) {
+		throw new DalException("NO IMPLEMENTADO");
+	}
+
 }
