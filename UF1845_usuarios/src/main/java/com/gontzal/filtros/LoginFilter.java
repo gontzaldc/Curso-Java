@@ -30,7 +30,7 @@ public class LoginFilter extends HttpFilter {
 
 		if (usuario == null) {
 			httpRequest.setAttribute("textoAlertaLogin",
-					"Debes estar logueado para acceder a la parte de administración");
+					"Debes estar logueado para acceder a la parte de administraciï¿½n");
 			httpRequest.getRequestDispatcher("/login").forward(httpRequest, httpResponse);
 			return;
 		}

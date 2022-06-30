@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/admin/usuarios");
 
 		} else {
-			request.setAttribute("textoAlertaLogin", "Email o contraseña incorrectos");
+			request.setAttribute("textoAlertaLogin", "Email o contraseÃ±a incorrectos");
 			request.setAttribute("usuario", usuario);
 			request.getRequestDispatcher(LOGIN_JSP).forward(request, response);
 		}
