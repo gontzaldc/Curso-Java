@@ -1,10 +1,8 @@
 package com.gontzal.dal;
 
-import java.sql.SQLException;
-
 public interface Dao<T> {
 
-	default Iterable<T> obtenerTodos() throws SQLException {
+	default Iterable<T> obtenerTodos(){
 		throw new DalException("NO IMPLEMENTADO");
 	}
 

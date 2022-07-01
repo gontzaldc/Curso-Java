@@ -25,8 +25,12 @@ public class Globales {
 			props.load(Globales.class.getClassLoader().getResourceAsStream(CONFIGURACION));
 
 			String tipo = props.getProperty("dal.tipodao");
+			String url = props.getProperty("dal.url");
+			String user = props.getProperty("dal.user");
+			String pass = props.getProperty("dal.pass");
+			String driver = props.getProperty("dal.driver");
 
-			DaoFabrica fabrica = new DaoFabrica(tipo);
+			DaoFabrica fabrica = new DaoFabrica(tipo, url, user, pass,driver);
 			DAO = fabrica.getDaoUsuario();
 			DAOPRODUCTO = fabrica.getDaoProducto();
 			DAOLIBRO = fabrica.getDaoLibro();

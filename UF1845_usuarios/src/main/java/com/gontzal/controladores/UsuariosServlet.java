@@ -2,8 +2,6 @@ package com.gontzal.controladores;
 
 import java.io.IOException;
 
-import com.gontzal.dal.DaoUsuarioMySQL;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,10 +27,9 @@ public class UsuariosServlet extends HttpServlet {
 //		}
 
 		// Empaqueta datos para la siguiente vista
-//		request.setAttribute("usuarios", Globales.DAO.obtenerTodos());
+		request.setAttribute("usuarios", Globales.DAO.obtenerTodos());
 		
 
-		request.setAttribute("usuarios", DaoUsuarioMySQL.getInstancia().obtenerTodos());
 		
 		// Redirecciona a la siguiente vista
 		request.getRequestDispatcher("/WEB-INF/vistas/usuarios.jsp").forward(request, response);

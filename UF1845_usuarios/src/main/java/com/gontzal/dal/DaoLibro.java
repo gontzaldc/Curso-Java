@@ -4,5 +4,9 @@ import com.gontzal.modelos.Libro;
 
 public interface DaoLibro extends Dao<Libro>{
 
-	Libro buscarPorId(Long id);
+	
+	// ¡¡¡NO HACE FALTA, YA HAY UN BUSCAR POR ID EN DAO!!!
+	default Libro buscarPorId(Long id){
+		throw new DalException("NO IMPLEMENTADO");
+	}
 }
