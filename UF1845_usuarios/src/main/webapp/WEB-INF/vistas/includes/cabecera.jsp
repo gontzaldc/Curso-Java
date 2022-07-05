@@ -46,7 +46,8 @@
 
 			</div>
 
-
+			<a href="libros/reservas"><i class="fa-solid fa-book"></i> Mis
+				libros</a>
 
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<c:choose>
