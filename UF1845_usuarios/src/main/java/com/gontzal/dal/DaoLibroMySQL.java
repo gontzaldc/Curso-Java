@@ -61,6 +61,29 @@ class DaoLibroMySQL implements DaoLibro {
 	}
 
 	@Override
+	public Libro buscarPorId(Long id) {
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement pst = con.prepareStatement(SQL_SELECT_ID)) {
+			
+			pst.setLong(1, id);
+			
+			try (ResultSet rs = pst.executeQuery()) {
+				
+				Libro libro= null;
+				
+				if(rs.next()) {
+					libro = new Libro(rs.getLong("id"),rs.getString("nombre"),rs.getString("categoria"),rs.getBoolean("disponible"));
+				}
+				
+				return libro;
+			}
+			
+		} catch (SQLException e) {
+			throw new DalException("no se ha podido encontrar el registro",e);
+		}
+	}
+
+	@Override
 	public Libro insertar(Libro libro) {
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement pst = con.prepareStatement(SQL_INSERT)) {
@@ -80,9 +103,25 @@ class DaoLibroMySQL implements DaoLibro {
 	}
 
 	@Override
-	public Libro modificar(Libro objeto) {
-		// TODO Auto-generated method stub
-		return DaoLibro.super.modificar(objeto);
+	public Libro modificar(Libro libro) {
+		
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement pst = con.prepareStatement(SQL_UPDATE);) {
+
+			pst.setString(1, libro.getNombre());
+			pst.setString(2, libro.getCategoria());
+			pst.setBoolean(3, libro.getDisponible());
+			pst.setLong(4, libro.getId());
+
+			if (pst.executeUpdate() != 1) {
+				throw new DalException("No se ha encontrado el usuario a modificar");
+			}
+
+			return libro;
+
+		} catch (SQLException e) {
+			throw new DalException("No se ha podido modificar el registro", e);
+		}
 	}
 
 	@Override

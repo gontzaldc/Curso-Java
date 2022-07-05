@@ -79,9 +79,8 @@ class DaoUsuarioMySQL implements DaoUsuario {
 	public Usuario insertar(Usuario usuario) {
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
-				PreparedStatement pst = con.prepareStatement(SQL_INSERT, Statement.RETURN_GENERATED_KEYS);) {
+				PreparedStatement pst = con.prepareStatement(SQL_INSERT, Statement.RETURN_GENERATED_KEYS)) {
 
-			System.out.println("id: " + usuario.getId());
 			pst.setString(1, usuario.getNombre());
 			pst.setString(2, usuario.getEmail());
 			pst.setString(3, usuario.getcontrasena());
