@@ -1,16 +1,18 @@
 package com.gontzal.dal;
 
 import java.sql.*;
-import java.time.ZoneOffset;
 import java.util.ArrayList;
 
 import com.gontzal.modelos.*;
+import com.gontzal.modelos.Usuario.Roles;
 
 class DaoReservaMySQL implements DaoReserva {
 
 	private String url, user, pass;
 
 	private static final String SQL_SELECT = "SELECT id, id_usuario, id_libro, fecha FROM reservas";
+
+
 	private static final String SQL_SELECT_ID = SQL_SELECT + " WHERE id = ?";
 	private static final String SQL_INSERT = "INSERT INTO reservas (fecha,usuarios_id,libros_id) VALUES(?,?,?)";
 	private static final String SQL_UPDATE = "UPDATE libros SET nombre = ?, categoria = ?, disponible = ? WHERE id = ?";
@@ -27,6 +29,7 @@ class DaoReservaMySQL implements DaoReserva {
 			throw new DalException("No se ha encontrado el driver de base de datos", e);
 		}
 	}
+	
 
 	@Override
 	public Iterable<Reserva> obtenerPorEmail(String email) {

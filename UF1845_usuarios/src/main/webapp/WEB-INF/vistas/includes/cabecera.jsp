@@ -22,62 +22,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">MyApp</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
-					<c:if test="${sessionScope.usuario.rol == 'ADMIN'}">
-						<li class="nav-item"><a class="nav-link"
-							href="admin/usuarios">Administración</a></li>
-					</c:if>
-					<c:if test="${sessionScope.usuario != null}">
-						<li class="nav-item"><a class="nav-link" href="libros">libros</a></li>
-					</c:if>
-				</ul>
-
-			</div>
-
-			<a href="libros/reservas"><i class="fa-solid fa-book"></i> Mis
-				libros</a>
-
-			<ul class="navbar-nav mb-2 mb-lg-0">
-				<c:choose>
-					<c:when test="${sessionScope.usuario != null}">
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<span class="navbar-text"> ${sessionScope.usuario.email}
-									<i class="fa-solid fa-user"></i>
-							</span>
-						</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="libros/reservas"><i
-										class="fa-solid fa-book"></i> Mis libros</a></li>
-								<li><a class="dropdown-item" href="logout"><i
-										class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar
-										sesión</a></li>
-
-							</ul></li>
-					</c:when>
-					<c:otherwise>
-						<li class="nav-item"><a class="nav-link" aria-current="page"
-							href="login">Login <i
-								class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-					</c:otherwise>
-				</c:choose>
-
-			</ul>
-		</div>
-	</nav>
+	
 
 	<c:if test="${textoAlerta!=null}">
 		<div class="alert alert-${nivelAlerta} alert-dismissible fade show"
