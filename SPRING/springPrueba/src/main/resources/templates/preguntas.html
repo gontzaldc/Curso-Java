@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Preguntas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<pre th:text="${error}"></pre>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Textto</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="p: ${preguntas}">
+				<th th:text="${p.id}">Id</th>
+				<td th:text="${p.texto}">Texto</td>
+				<td>
+					<a th:href="@{/admin/preguntas/} + ${p.id}" href="#">Editar</a>
+					<a th:href="@{/admin/preguntas/borrar/} + ${p.id}" href="#">Borrar</a>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>
+					<a th:href="@{/admin/preguntas/insertar}" href="#">Añadir</a>
+				</td>
+			</tr>
+		</tfoot>
+		
+	</table>
+</body>
+</html>

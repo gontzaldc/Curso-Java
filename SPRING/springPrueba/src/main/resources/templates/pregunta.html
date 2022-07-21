@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Preguntas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+	<form method="post" th:object="${pregunta}">
+		<input type="number" th:field="*{id}" placeholder="Id">
+		<p th:if="${#fields.hasErrors('id')}">El id <span th:errors="*{id}"></span></p>
+		
+		<input type="text" th:field="*{texto}" placeholder="pregunta">
+		<p th:if="${#fields.hasErrors('texto')}" th:errors="*{texto}"></p>
+
+		<button>Aceptar</button>
+	</form>
+</body>
+</html>
