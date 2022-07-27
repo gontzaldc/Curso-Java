@@ -16,7 +16,7 @@ public class CuestionarioControler {
 	
 	@GetMapping
 	public String mostrarListado(Model modelo) {
-		modelo.addAttribute("preguntas", repo.findAll());
+		modelo.addAttribute("preguntas", repo.obtenerPreguntasConRespuestas());
 		return "cuestionario";
 	}
 	

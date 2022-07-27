@@ -1,10 +1,12 @@
 package com.gontzal.prueba.entidades;
 
 
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-import lombok.Data;
+import lombok.*;
 
 @Entity
 @Table(name="preguntas")
@@ -20,4 +22,8 @@ public class Pregunta {
 	@Size(min=10,max=255)
 	private String texto;
 	
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@OneToMany(mappedBy = "pregunta")
+	private Set<Respuesta> respuestas;
 }

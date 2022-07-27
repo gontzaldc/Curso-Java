@@ -19,6 +19,11 @@ public class Respuesta {
 	@Size(min = 10, max = 255)
 	private String texto;
 
+	@NotNull
+	private Boolean correcta;
+	
 	@ManyToOne
 	private Pregunta pregunta;
+	
+	
 }

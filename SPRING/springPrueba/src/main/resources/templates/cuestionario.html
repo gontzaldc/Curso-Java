@@ -5,24 +5,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-   
-   <table>
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>texto</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="p: ${preguntas}">
-				<th th:text="${p.id}">Id</th>
-				<td th:text="${p.texto}">Nombre</td>
-				
-			</tr>
-		</tbody>
-		
-		
-	</table>
-	
+
+	<div th:each="p: ${preguntas}">
+		<h4 th:text="${p.texto}"></h4>
+		<div th:each="r: ${p.respuestas}">
+			<button th:text="${r.texto}" th:value="${r.correcta}"></button>
+		</div>
+
+	</div>
+
+
 </body>
 </html>
