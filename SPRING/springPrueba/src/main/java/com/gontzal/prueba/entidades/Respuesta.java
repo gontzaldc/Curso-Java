@@ -3,7 +3,7 @@ package com.gontzal.prueba.entidades;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-import lombok.Data;
+import lombok.*;
 
 @Entity
 @Table(name = "respuestas")
@@ -22,6 +22,9 @@ public class Respuesta {
 	@NotNull
 	private Boolean correcta;
 	
+
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	@ManyToOne
 	private Pregunta pregunta;
 	

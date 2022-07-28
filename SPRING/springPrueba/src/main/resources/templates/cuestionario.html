@@ -6,14 +6,18 @@
 </head>
 <body>
 
-	<div th:each="p: ${preguntas}">
-		<h4 th:text="${p.texto}"></h4>
-		<div th:each="r: ${p.respuestas}">
-			<button th:text="${r.texto}" th:value="${r.correcta}"></button>
+	<form method="post" th:action="@{/preguntas/enviar}">
+		<div th:each="p: ${preguntas}">
+			<h4 th:text="${p.texto}"></h4>
+			<div th:each="r: ${p.respuestas}" class="respuestas">
+
+				<input th:text="${r.texto}" th:value=${r.id} type="radio"
+					th:name="${p.id}">
+			</div>
+
 		</div>
 
-	</div>
-
-
+		<button>Comprobar resultados</button>
+	</form>
 </body>
 </html>
