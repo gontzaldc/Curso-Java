@@ -1,0 +1,26 @@
+!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tienda</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>Precio</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="p :${productos}">
+
+<th th:text="${p.id}"></th>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
