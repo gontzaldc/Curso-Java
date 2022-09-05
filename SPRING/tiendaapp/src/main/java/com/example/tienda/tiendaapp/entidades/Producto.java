@@ -25,4 +25,10 @@ public class Producto {
 	
 	private BigDecimal precio;
 	private Integer stock;
+	
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@NotNull
+	@ManyToOne
+	private Categoria categoria;
 }

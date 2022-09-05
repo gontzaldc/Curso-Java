@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tienda</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<form th:action="@{/admin/productos/insertar}" method="post"
+		th:object="${producto}">
+		<input th:field="*{nombre}">
+		<p th:errors="*{nombre}">Error nombre</p> 
+		<input th:field="*{precio}">
+		<p th:errors="*{precio}">Error precio</p>
+		<input th:field="*{stock}"> 
+		<p th:errors="*{stock}">Error stock</p>
+		<select th:field="*{categoria}">
+			<option th:each="c : ${categorias}" th:text="${c.nombre}"
+				th:value="${c.id}"></option>
+
+		</select>
+		<p th:errors="*{categoria}">Error categoria</p>
+
+	<button>Añadir</button>
+	</form>
+
+</body>
+</html>

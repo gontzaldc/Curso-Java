@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.tienda.tiendaapp.entidades.Producto;
+import com.example.tienda.tiendaapp.entidades.*;
 
 @SpringBootTest
 class ProductoRepositoryTest {
@@ -17,7 +17,7 @@ class ProductoRepositoryTest {
 	private ProductoRepositorio repo;
 	@Test
 	void insertarProducto() {
-		Producto producto = new Producto(null,"ordenador",new BigDecimal("2.30"),3);
+		Producto producto = new Producto(null,"ordenador",new BigDecimal("2.30"),3,new Categoria());
 		
 		repo.save(producto);
 		
