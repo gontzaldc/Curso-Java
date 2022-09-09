@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import com.fasterxml.jackson.annotation.*;
+
 import lombok.*;
 
 @Entity
@@ -23,5 +25,6 @@ public class Categoria {
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@OneToMany(mappedBy = "categoria")
+	@JsonIgnore
 	private Set<Producto> productos;
 }

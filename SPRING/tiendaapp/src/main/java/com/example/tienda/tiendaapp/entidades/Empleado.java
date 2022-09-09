@@ -1,22 +1,17 @@
 package com.example.tienda.tiendaapp.entidades;
 
-
 import java.math.BigDecimal;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-import com.fasterxml.jackson.annotation.*;
-
-import lombok.*;
+import lombok.Data;
 
 @Entity
-@Table(name = "productos")
+@Table(name="empleados")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Producto {
-
+public class Empleado {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -25,13 +20,10 @@ public class Producto {
 	@NotBlank
 	private String nombre;
 	
-	private BigDecimal precio;
-	private Integer stock;
+	@Min(0)
+	private BigDecimal Sueldo;
 	
-
 	@NotNull
-	@ToString.Exclude
-	@EqualsAndHashCode.Exclude
-	@ManyToOne
-	private Categoria categoria;
+	@NotBlank
+	private String puesto;
 }
