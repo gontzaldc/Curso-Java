@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de inmuebles</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body class="p-2">
+
+	<a th:href="@{/inmuebles/admin/formulario}">Añadir nuevo inmueble</a>
+	<h1 class="bg-primary text-light">Inmobiliaria IparHouse</h1>
+	<div class="row">
+		<div id="seccion-izquierda" class="col">
+			<form class="row g-3" th:action="@{/inmuebles/busqueda}">
+
+				<input type="text" name="busqueda" class="form-control"
+					placeholder="Buscar vivienda por nombre o dirección">
+
+				<div class="col-auto">
+					<button type="submit" class="btn btn-primary mb-3">Buscar</button>
+				</div>
+			</form>
+			<div class="row">
+				<div>
+					<div class="d-flex">
+						<div>
+							<a class="btn btn-primary m-1" th:href="@{/inmuebles}">Todos</a>
+						</div>
+						<div th:each="t: ${tipos}">
+							<div>
+								<a class="btn btn-primary m-1"
+									th:href="@{/inmuebles/tipo/}+ ${t.id}" th:text="${t.nombre}">Alquiler</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<h4>Rango de precios</h4>
+
+						<form th:action="@{/inmuebles/rango}">
+							<div class="form-row">
+								<div class="col">
+									<input type="number" class="form-control" name="min"
+										placeholder="Min" required>
+								</div>
+								<div class="col">
+									<input type="number" class="form-control" name="max"
+										placeholder="Max" required>
+								</div>
+							</div>
+							<button class="btn btn-info">Filtrar</button>
+						</form>
+					</div>
+					<div class="row">
+
+						<div class="card m-2" style="width: 18rem;" th:each="i: ${inmuebles}">
+							<img src="https://placeimg.com/640/480/arch?+${i.id}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title" th:text="${i.nombre}">Nombre</h5>
+								<p class="card-text" th:text="${i.direccion}">Direccion</p>
+								<span class="card-text" th:text="${i.tipo.nombre}">Tipo</span>:
+								€<span class="card-text" th:text="${i.precio}">Precio</span> <br><a
+									th:href="@{/inmuebles/detalle/} + ${i.id}" class="btn btn-primary">Ver Detalle</a>
+							</div>
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div th:if="${inmueble.id != null}" id="seccion-derecha" class="col">
+		<img src="https://placeimg.com/640/480/arch?+${i.id}">
+
+				<h3 th:text="${inmueble.id}">Id</h3>
+				<h4 th:text="${inmueble.nombre}">Id</h4>
+				<span class="card-text" th:text="${inmueble.tipo.nombre}">Tipo</span>:
+								€<span class="card-text" th:text="${inmueble.precio}">Precio</span> 
+
+		</div>
+	</div>
+
+
+</body>
+</html>

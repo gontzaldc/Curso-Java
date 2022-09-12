@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de inmuebles</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+	<form th:action="@{/inmuebles/admin/formulario}" method="post"
+		th:object="${inmueble}">
+
+		<div class="mb-3">
+			<label for="nombre" class="form-label">Nombre</label> <input
+				class="form-control" th:field="*{nombre}" type="text">
+			<p class="text-danger" th:errors="*{nombre}">Error nombre</p>
+		</div>
+
+		<div class="mb-3">
+			<label for="direccion" class="form-label">Direccion</label> <input
+				class="form-control" th:field="*{direccion}" type="text">
+			<p class="text-danger" th:errors="*{direccion}">Error direccion</p>
+		</div>
+
+		<div class="mb-3">
+			<label for="precio" class="form-label">Precio</label> <input
+				class="form-control" th:field="*{precio}" type="text">
+			<p class="text-danger" th:errors="*{precio}">Error precio</p>
+		</div>
+
+		<select class="form-select"  th:field="*{tipo}">
+			
+			<option th:each="t : ${tipos}" th:text="${t.nombre}"
+				th:value="${t.id}">One</option>
+			
+		</select> 
+
+		<button class="btn btn-primary">Nuevo inmueble</button>
+	</form>
+</body>
+</html>
