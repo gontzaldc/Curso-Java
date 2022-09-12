@@ -5,8 +5,7 @@
 <title>Listado de inmuebles</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body class="m-3">
-	<h3>Añadir un nuevo inmueble</h3>
+<body>
 	<form th:action="@{/inmuebles/admin/formulario}" method="post"
 		th:object="${inmueble}">
 
@@ -28,15 +27,14 @@
 			<p class="text-danger" th:errors="*{precio}">Error precio</p>
 		</div>
 
-		<label for="tipo">Tipo</label> <select class="form-select"
-			th:field="*{tipo}">
-
+		<select class="form-select"  th:field="*{tipo}">
+			
 			<option th:each="t : ${tipos}" th:text="${t.nombre}"
 				th:value="${t.id}">One</option>
+			
+		</select> 
 
-		</select>
-
-		<button class="btn btn-primary mt-2 ">Nuevo inmueble</button>
+		<button class="btn btn-primary">Nuevo inmueble</button>
 	</form>
 </body>
 </html>

@@ -31,6 +31,9 @@ public class Inmueble {
 	@Min(1)
 	private BigDecimal precio;
 	
+	@NotNull
+	private String imagen="https://placeimg.com/640/480/arch?";
+	
 	
 	@NotNull
 	@ManyToOne
